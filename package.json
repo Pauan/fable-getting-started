@@ -2,8 +2,8 @@
   "name": "fable-quick-start",
   "description": "Fully working Fable project which makes it easy to get started",
   "version": "1.0.0",
-  "main": "./dist/umd/main.js",
-  "module": "./dist/es2015/main.js",
+  "main": "./dist/umd/Main.js",
+  "module": "./dist/es2015/Main.js",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-plugin-external-helpers": "^6.8.0",

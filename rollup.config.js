@@ -5,12 +5,12 @@ import babel from "rollup-plugin-babel";
 
 export default {
   moduleName: "fableQuickStart",
-  entry: "./.build/main.js",
+  entry: "./.build/Main.js",
   sourceMap: true,
 
   targets: [
-    { dest: "./dist/umd/main.js", format: "umd" },
-    { dest: "./dist/es2015/main.js", format: "es" }
+    { dest: "./dist/umd/Main.js", format: "umd" },
+    { dest: "./dist/es2015/Main.js", format: "es" }
   ],
 
   plugins: [

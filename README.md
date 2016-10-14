@@ -68,11 +68,11 @@ project from scratch.
 Running your project
 ====================
 
-After compiling, the final JavaScript code will be in the `dist/umd/main.js`
+After compiling, the final JavaScript code will be in the `dist/umd/Main.js`
 file. You can run that file directly in either a browser or Node.js.
 
 If you want to run it in Node.js, you can use `node .` or
-`node dist/umd/main.js` (they both do the same thing).
+`node dist/umd/Main.js` (they both do the same thing).
 
 Making changes to the project
 =============================
@@ -214,6 +214,6 @@ seamlessly.
 
 If it doesn't work, then they can do one of the following:
 
-* If they are using CommonJS/RequireJS/globals they can import `dist/umd/main.js`
+* If they are using CommonJS/RequireJS/globals they can import `dist/umd/Main.js`
 
-* If they are using ES2015 modules, they can import `dist/es2015/main.js`
+* If they are using ES2015 modules, they can import `dist/es2015/Main.js`
