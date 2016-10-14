@@ -2,3 +2,6 @@
 /.build/
 /dist/
 /npm-debug.log
+/packages/
+.paket/paket.exe
+.DS_Store
