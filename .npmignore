@@ -3,5 +3,5 @@
 /.gitignore
 /fableconfig.json
 /rollup.config.js
-/fsx
+/fs
 /js

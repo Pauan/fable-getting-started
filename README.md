@@ -58,7 +58,7 @@ automatically compiled when publishing to npm.
 You can use `npm run build` to manually compile your project at any time.
 
 If you instead use `npm run watch` then it will compile your project, and will
-then automatically recompile your project if any of your `.fsx` or `.js` files
+then automatically recompile your project if any of your `.fs` or `.js` files
 change.
 
 Not only is this much more convenient, but it's faster too, because it only
@@ -77,10 +77,10 @@ If you want to run it in Node.js, you can use `node .` or
 Making changes to the project
 =============================
 
-You can modify the `.fsx` files in the `fsx` folder, and you can modify the
+You can modify the `.fs` files in the `fs` folder, and you can modify the
 `.js` files in the `js` folder.
 
-The `.fsx` files are F# code, which will be compiled by Fable.
+The `.fs` files are F# code, which will be compiled by Fable.
 
 The `.js` files are JavaScript code, which will be compiled by Babel and will
 be bundled into your compiled code.
@@ -88,15 +88,15 @@ be bundled into your compiled code.
 How to import JavaScript code into F#
 =====================================
 
-First, make sure that you have the following line in your `main.fsx` file:
+First, make sure that you have the following line in your `Main.fs` file:
 
 ```
 #r "../node_modules/fable-core/Fable.Core.dll"
 ```
 
-Don't worry: this repository already includes the above line in `main.fsx`.
+Don't worry: this repository already includes the above line in `Main.fs`.
 
-Now you can import `.js` files into `.fsx` by using the following attribute:
+Now you can import `.js` files into `.fs` by using the following attribute:
 
 ```
 [<Fable.Core.Import("foo", "../js/foo.js")>]
@@ -114,7 +114,7 @@ Now you no longer need the `Fable.Core` prefix when importing:
 [<Import("foo", "../js/foo.js")>]
 ```
 
-You can see an example in the `fsx/message.fsx` file.
+You can see an example in the `fs/Message.fs` file.
 
 This works for any local JavaScript files in the `js` folder, but it also
 works for builtin Node.js modules or JavaScript files which have been
