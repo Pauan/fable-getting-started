@@ -1,7 +1,9 @@
 /.build/
+/fs/
+/js/
+
 /.babelrc
 /.gitignore
 /fableconfig.json
 /rollup.config.js
-/fs
-/js
+/yarn.lock
