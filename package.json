@@ -21,7 +21,7 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "build": "env NODE_ENV=production BABEL_ENV=production fable --production --verbose",
+    "build": "env NODE_ENV=production BABEL_ENV=production fable --production",
     "watch": "env NODE_ENV=development BABEL_ENV=development fable --debug"
   }
 }
