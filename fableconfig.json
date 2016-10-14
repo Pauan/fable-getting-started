@@ -1,0 +1,21 @@
+{
+  "babelrc": true,
+  "sourceMaps": true,
+  "projFile": "./Main.fsproj",
+  "outDir": "./.build",
+  "coreLib": "fable-core/es2015.js",
+  "targets": {
+    "production": {
+      "scripts": {
+        "postbuild": "rollup --config"
+      }
+    },
+    "debug": {
+      "watch": true,
+      "symbols": ["DEBUG"],
+      "scripts": {
+        "postbuild-once": "rollup --config --watch"
+      }
+    }
+  }
+}

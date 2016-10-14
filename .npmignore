@@ -1,0 +1,7 @@
+/.build/
+/.babelrc
+/.gitignore
+/fableconfig.json
+/rollup.config.js
+/fsx
+/js

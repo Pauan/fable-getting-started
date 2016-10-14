@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<PropertyGroup>
+    <Name>Main</Name>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>Main</AssemblyName>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f1219bf1-5ea5-4e0c-bb82-47b51ac637af</ProjectGuid>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+  </PropertyGroup>-->
+  <ItemGroup>
+    <Reference Include="node_modules/fable-core/Fable.Core.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fsx/Message.fsx" />
+    <Compile Include="fsx/Main.fs" />
+  </ItemGroup>
+</Project>
