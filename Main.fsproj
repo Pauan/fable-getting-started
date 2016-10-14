@@ -12,7 +12,7 @@
     <Reference Include="node_modules/fable-core/Fable.Core.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fsx/Message.fsx" />
+    <Compile Include="fsx/Message.fs" />
     <Compile Include="fsx/Main.fs" />
   </ItemGroup>
 </Project>
