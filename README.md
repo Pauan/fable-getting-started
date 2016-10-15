@@ -287,7 +287,7 @@ You can then do one of the following:
   to use the latest version for `foo`
 
 * Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
-  *all* of your dependencies to the latest version, and also edits
+  *all* of your dependencies to the latest versions, and also edits
   [`package.json`](https://yarnpkg.com/en/docs/package-json) to use the latest
   versions.
 
@@ -305,7 +305,7 @@ You can do one of the following:
   the [`package.json`](https://yarnpkg.com/en/docs/package-json) file.
 
 * Manually edit [`package.json`](https://yarnpkg.com/en/docs/package-json) to
-  remove the `foo` package`, and then use
+  remove the `foo` package, and then use
   [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
 Locking down you dependencies
