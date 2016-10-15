@@ -16,7 +16,7 @@ In addition, it also shows how to do the following:
 Downloading the project
 =======================
 
-Make sure you have Git installed, and then run the following command in a
+Make sure you have Git installed, and then use the following command in a
 terminal:
 
 ```
@@ -37,20 +37,21 @@ Make sure that you have [`node`](https://nodejs.org/) and
 [`yarn`](https://yarnpkg.com/) installed.
 
 You can get [`yarn`](https://yarnpkg.com/) from
-[its website](https://yarnpkg.com/en/docs/install), or alternatively by using
-the following command:
+[its website](https://yarnpkg.com/en/docs/install), or alternatively you can
+use the following command:
 
 ```
 npm install --global yarn
 ```
 
 Now you must use [`yarn install`](https://yarnpkg.com/en/docs/cli/install),
-which will download all of the necessary dependencies for the project. After
-the dependencies are downloaded, it will then automatically compile your
+which will download all of the necessary dependencies for the project.
+
+After the dependencies are downloaded, it will then automatically compile your
 project.
 
-You can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install) which is
-exactly the same as [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
+**Note:** you can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
+which is exactly the same as [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
 
 You do not need to install Fable globally: Fable will be installed locally
 inside of the `node_modules` folder. This makes it easier for other people to
@@ -77,7 +78,7 @@ has taken the name first.
 Compiling your project
 ======================
 
-Your project is automatically compiled when you run
+Your project is automatically compiled when you use
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
 If you use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run) then it
@@ -153,7 +154,7 @@ to use in your project, then you can do either of the following:
 * Use [`yarn add --dev foo`](https://yarnpkg.com/en/docs/cli/add)
 
 * Manually edit the `package.json` file and add `foo` to the
-  `devDependencies`, then run [`yarn`](https://yarnpkg.com/en/docs/cli/install)
+  `devDependencies`, then use [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
   **Note:** In certain situations you may need to add the package to
   `dependencies` rather than `devDependencies`
@@ -257,12 +258,12 @@ You can then do one of the following:
   `package.json` to use the latest versions.
 
 * Manually edit `package.json` to use the most up-to-date versions, and then
-  run [`yarn`](https://yarnpkg.com/en/docs/cli/install).
+  use [`yarn`](https://yarnpkg.com/en/docs/cli/install).
 
 Locking down you dependencies
 =============================
 
-Whenever you run [`yarn`](https://yarnpkg.com/en/docs/cli/install),
+Whenever you use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
 [`yarn add`](https://yarnpkg.com/en/docs/cli/add), or
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), it will create a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file which specifies all
