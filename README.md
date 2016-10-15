@@ -11,7 +11,7 @@ In addition, it also shows how to do the following:
 
 * Download JavaScript libraries and then import them into F#
 
-* Run your project as an application in either a browser or Node.js
+* Run your project as an application in either a browser or [Node.js](https://nodejs.org/)
 
 Downloading the project
 =======================
@@ -118,8 +118,8 @@ file.
   <script src="umd/Main.js"></script>
   ```
 
-* If you want to run it in Node.js, you can use `node .` or
-  `node dist/umd/Main.js` (they both do the same thing)
+* If you want to run it in [Node.js](https://nodejs.org/), you can use
+  `node .` or `node dist/umd/Main.js` (they both do the same thing)
 
 Making changes to the project
 =============================
@@ -220,11 +220,16 @@ file:
 Don't worry: this repository already includes the above code in
 `fs/Main.fsproj`
 
-Now you can import `.js` files into `.fs` by using the following attribute:
+Now you can import `.js` files into `.fs` files by using the
+`Fable.Core.Import` attribute:
 
 ```
 [<Fable.Core.Import("foo", "/js/foo.js")>]
+let foo: string = jsNative
 ```
+
+**Note:** You have to specify the type of the variable, and its value should
+usually be `jsNative`
 
 If you are using a lot of imports you can do this:
 
@@ -236,13 +241,15 @@ Now you no longer need the `Fable.Core` prefix when importing:
 
 ```
 [<Import("foo", "/js/foo.js")>]
+let foo: string = jsNative
 ```
 
 You can see an example in the `fs/Message.fs` file.
 
 This works for any local JavaScript files in the `js` folder, but it also
-works for builtin Node.js modules or npm packages which have been
-downloaded with [`yarn`](https://yarnpkg.com/en/docs/cli/install):
+works for builtin [Node.js](https://nodejs.org/) modules or
+[npm](https://www.npmjs.com/) packages which have been downloaded with
+[`yarn`](https://yarnpkg.com/en/docs/cli/install):
 
 ```
 [<Import("join", "path")>]
@@ -260,7 +267,7 @@ contains the `Import`
 
 If the file path does not start with `/` or `.` or `..` then it is an
 [npm](https://www.npmjs.com/) package. That means that it is either a builtin
-Node.js module (e.g.
+[Node.js](https://nodejs.org/) module (e.g.
 [`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
 [`fs`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html), etc.) or it is
 a dependency which is listed in the
