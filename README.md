@@ -36,32 +36,32 @@ not work if you are in a sub-folder!
 Make sure that you have [`node`](https://nodejs.org/) and
 [`yarn`](https://yarnpkg.com/) installed.
 
-You can get [`yarn`](https://yarnpkg.com/) from either
-[its website](https://yarnpkg.com/en/docs/install) or by using the following
-command:
+You can get [`yarn`](https://yarnpkg.com/) from
+[its website](https://yarnpkg.com/en/docs/install), or alternatively by using
+the following command:
 
 ```
 npm install --global yarn
 ```
 
-Now you must use the [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
-command, which will download all of the necessary dependencies for the
-project. After the dependencies are downloaded, it will then automatically
-compile your project.
+Now you must use [`yarn install`](https://yarnpkg.com/en/docs/cli/install),
+which will download all of the necessary dependencies for the project. After
+the dependencies are downloaded, it will then automatically compile your
+project.
 
 You can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install) which is
 exactly the same as [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
 
-You do not need to install Fable globally. Instead, Fable will be installed
-locally inside of the `node_modules` folder. This makes it easier for other
-people to contribute to your project: they do not need to install Fable
-globally, and it also guarantees that everybody is compiling your project with
-the correct version of Fable.
+You do not need to install Fable globally: Fable will be installed locally
+inside of the `node_modules` folder. This makes it easier for other people to
+contribute to your project because they do not need to install Fable globally,
+and it also guarantees that everybody is compiling your project with the
+correct version of Fable.
 
 Customization
 =============
 
-You will probably want to change the following files:
+You will probably want to change the following properties:
 
 * `package.json`
 
@@ -71,10 +71,6 @@ You will probably want to change the following files:
 
   * `version`
 
-* `rollup.config.js`
-
-  * `moduleName`
-
 You can use whatever name you want for your project, as long as nobody else
 has taken the name first.
 
@@ -82,18 +78,11 @@ Compiling your project
 ======================
 
 Your project is automatically compiled when you run
-[`yarn`](https://yarnpkg.com/en/docs/cli/install).
-
-Alternatively, you can use [`yarn run build`](https://yarnpkg.com/en/docs/cli/run)
-to manually compile your project. It is the same as using
-[`yarn`](https://yarnpkg.com/en/docs/cli/install), except that it does not
-download any dependencies, so you must run
-[`yarn`](https://yarnpkg.com/en/docs/cli/install) first before you can use
-[`yarn run build`](https://yarnpkg.com/en/docs/cli/run)
+[`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
 If you use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run) then it
 will compile your project (exactly the same as
-[`yarn run build`](https://yarnpkg.com/en/docs/cli/run)), but it will also
+[`yarn`](https://yarnpkg.com/en/docs/cli/install)), but it will also
 automatically recompile your project if you make any changes to the `.fs` or
 `.js` files.
 
@@ -104,7 +93,7 @@ recompiles the files that actually changed, rather than compiling your
 entire project from scratch.
 
 After making a minor change to a single `.fs` file,
-[`yarn run build`](https://yarnpkg.com/en/docs/cli/run) takes 4,000
+[`yarn`](https://yarnpkg.com/en/docs/cli/install) takes 4,000
 milliseconds, but [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run)
 takes only 40 milliseconds! The times may be slower or faster depending on
 your computer, but watch mode is always faster than a full build.
@@ -149,14 +138,14 @@ the order matters! If a file `Foo.fs` uses a file `Bar.fs`, then `Bar.fs` must
 be on top of `Foo.fs`
 
 That also means that `Main.fs` must be at the bottom, because it depends on
-everything else and nothing depends on it.
+everything else.
 
 How to download JavaScript libraries
 ====================================
 
-Most JavaScript libraries are stored in npm. If there is an npm package called
-`foo` that you want to use in your project, then you can do either of the
-following:
+Most JavaScript libraries are stored in [npm](https://www.npmjs.com/). If
+there is an [npm](https://www.npmjs.com/) package called `foo` that you want
+to use in your project, then you can do either of the following:
 
 * Use [`yarn add --dev foo`](https://yarnpkg.com/en/docs/cli/add)
 
@@ -166,24 +155,25 @@ following:
   **Note:** In certain situations you may need to add the package to
   `dependencies` rather than `devDependencies`
 
-Generally the first option is better, but the second option gives you more
+Usually the first option is better, but the second option gives you more
 precise control.
 
-If a JavaScript library isn't on npm, you can instead use a Git URL:
+If a JavaScript library isn't on [npm](https://www.npmjs.com/), you can
+instead use a Git URL:
 
 ```
 yarn add --dev git+https://foo/bar.git#commit
 ```
 
-You will need to replace `foo/bar.git` with the URL to the git repository, and
-you should also specify a `commit`, which should be a git commit hash. Here is
+You will need to replace `foo/bar.git` with the URL to the Git repository, and
+you should also specify a `commit`, which should be a Git commit hash. Here is
 an example:
 
 ```
 yarn add --dev git+https://github.com/Pauan/fable-getting-started.git#354a0b13a0d4df61d0cc8615829b238fdd1fbd3e
 ```
 
-If the git repository is hosted on GitHub, you can instead use a shorter form:
+If the Git repository is hosted on GitHub, you can instead use the shorter form `author/name`, like this:
 
 ```
 yarn add --dev Pauan/fable-getting-started#354a0b13a0d4df61d0cc8615829b238fdd1fbd3e
@@ -223,7 +213,7 @@ Now you no longer need the `Fable.Core` prefix when importing:
 You can see an example in the `fs/Message.fs` file.
 
 This works for any local JavaScript files in the `js` folder, but it also
-works for builtin Node.js modules or JavaScript files which have been
+works for builtin Node.js modules or npm packages which have been
 downloaded with [`yarn`](https://yarnpkg.com/en/docs/cli/install):
 
 ```
@@ -231,17 +221,21 @@ downloaded with [`yarn`](https://yarnpkg.com/en/docs/cli/install):
 ```
 
 ```
-[<Import("foo", "other-library/foo.js")>]
+[<Import("foo", "some-library/foo.js")>]
 ```
 
 If the file path starts with `/` then it is relative to your project
 directory.
 
-If the file path does not start with `/` then it is an npm package. That means
-that it is either a builtin Node.js module (e.g.
+If the file path starts with `.` or `..` then it is relative to the file which
+contains the `Import`
+
+If the file path does not start with `/` or `.` or `..` then it is an
+[npm](https://www.npmjs.com/) package. That means that it is either a builtin
+Node.js module (e.g.
 [`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
 [`fs`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html), etc.) or it is
-a library in the `node_modules` folder.
+a dependency which is listed in the `package.json` file.
 
 How to upgrade your dependencies
 ================================
@@ -249,16 +243,18 @@ How to upgrade your dependencies
 You can use [`yarn outdated`](https://yarnpkg.com/en/docs/cli/outdated) which
 will tell you which of your project's dependencies are out of date.
 
-You can then do either of the following:
+You can then do one of the following:
 
-* Manually edit `package.json` to use the most up-to-date versions.
+* Manually edit `package.json` to use the most up-to-date versions, and then
+  run [`yarn`](https://yarnpkg.com/en/docs/cli/install).
 
 * Use [`yarn upgrade foo`](https://yarnpkg.com/en/docs/cli/upgrade) which will
-  upgrade to the latest version of the package `foo`, and it will also
-  automatically edit `package.json` to use the latest version.
+  upgrade the package `foo` to the latest version, and it will also
+  automatically edit `package.json` to use the latest version for `foo`.
 
 * Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
-  all of your dependencies and also edits `package.json`
+  all of your dependencies to the latest version, and also edits
+  `package.json` to use the latest versions.
 
 Locking down you dependencies
 =============================
@@ -276,12 +272,12 @@ file exists, then it will use the versions which are specified in the
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file.
 
 You should add the [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file
-into git, because then everybody who downloads your project is guaranteed to
+into Git, because then everybody who downloads your project is guaranteed to
 use the exact same versions as you, which helps to prevent bugs.
 
 After making any changes (such as [`yarn add`](https://yarnpkg.com/en/docs/cli/add)
 or [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)) you should add
-the new [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) into git.
+the new [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) into Git.
 
 By following those steps, your project will always use versions which are
 guaranteed to work.

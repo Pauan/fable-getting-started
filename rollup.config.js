@@ -5,7 +5,7 @@ import babel from "rollup-plugin-babel";
 import root from "rollup-plugin-root-import";
 
 export default {
-  moduleName: "fableQuickStart",
+  moduleName: "Main",
   entry: "./.build/Main.js",
   sourceMap: true,
 
