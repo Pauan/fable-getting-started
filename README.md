@@ -62,13 +62,16 @@ correct version of Fable.
 Customization
 =============
 
-You will probably want to change these properties in the `package.json` file:
+You will probably want to change these properties in the
+[`package.json`](https://yarnpkg.com/en/docs/package-json) file:
 
 * `name`
 
 * `description`
 
 * `version`
+
+* `license`
 
 You can use whatever name you want for your project, as long as nobody else
 has taken the name first.
@@ -151,11 +154,15 @@ to use in your project, then you can do either of the following:
 
 * Use [`yarn add --dev foo`](https://yarnpkg.com/en/docs/cli/add)
 
-* Manually edit the `package.json` file and add `foo` to the
-  `devDependencies`, then use [`yarn`](https://yarnpkg.com/en/docs/cli/install)
+* Manually edit the [`package.json`](https://yarnpkg.com/en/docs/package-json)
+  file and add `foo` to the
+  [`devDependencies`](https://yarnpkg.com/en/docs/package-json#toc-devdependencies),
+  then use [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
   **Note:** In certain situations you may need to add the package to
-  `dependencies` rather than `devDependencies`
+  [`dependencies`](https://yarnpkg.com/en/docs/package-json#toc-dependencies)
+  rather than
+  [`devDependencies`](https://yarnpkg.com/en/docs/package-json#toc-devdependencies)
 
 Usually the first option is better, but the second option gives you more
 precise control.
@@ -254,7 +261,8 @@ If the file path does not start with `/` or `.` or `..` then it is an
 Node.js module (e.g.
 [`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
 [`fs`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html), etc.) or it is
-a dependency which is listed in the `package.json` file.
+a dependency which is listed in the
+[`package.json`](https://yarnpkg.com/en/docs/package-json) file.
 
 How to upgrade your dependencies
 ================================
@@ -266,14 +274,17 @@ You can then do one of the following:
 
 * Use [`yarn upgrade foo`](https://yarnpkg.com/en/docs/cli/upgrade) which will
   upgrade the package `foo` to the latest version, and it will also
-  automatically edit `package.json` to use the latest version for `foo`.
+  automatically edit [`package.json`](https://yarnpkg.com/en/docs/package-json)
+  to use the latest version for `foo`.
 
 * Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
   all of your dependencies to the latest version, and also edits
-  `package.json` to use the latest versions.
+  [`package.json`](https://yarnpkg.com/en/docs/package-json) to use the latest
+  versions.
 
-* Manually edit `package.json` to use the most up-to-date versions, and then
-  use [`yarn`](https://yarnpkg.com/en/docs/cli/install).
+* Manually edit [`package.json`](https://yarnpkg.com/en/docs/package-json) to
+  use the most up-to-date versions, and then use
+  [`yarn`](https://yarnpkg.com/en/docs/cli/install).
 
 Locking down you dependencies
 =============================
