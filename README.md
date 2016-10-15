@@ -104,15 +104,18 @@ Running your project
 After compiling, the final JavaScript code will be in the `dist/umd/Main.js`
 file.
 
-If you want to run it in a browser, you can include it in an HTML `<script>`
-tag:
+* If you want to run it in a browser, you can open the `dist/index.html` file
+  in any browser. You will need to open your browser's web console in order to
+  see the output.
 
-```
-<script src="dist/umd/Main.js"></script>
-```
+  It uses a standard HTML `<script>` tag to load the `dist/umd/Main.js` file:
 
-If you want to run it in Node.js, you can use `node .` or
-`node dist/umd/Main.js` (they both do the same thing)
+  ```
+  <script src="umd/Main.js"></script>
+  ```
+
+* If you want to run it in Node.js, you can use `node .` or
+  `node dist/umd/Main.js` (they both do the same thing)
 
 Making changes to the project
 =============================
@@ -245,9 +248,6 @@ will tell you which of your project's dependencies are out of date.
 
 You can then do one of the following:
 
-* Manually edit `package.json` to use the most up-to-date versions, and then
-  run [`yarn`](https://yarnpkg.com/en/docs/cli/install).
-
 * Use [`yarn upgrade foo`](https://yarnpkg.com/en/docs/cli/upgrade) which will
   upgrade the package `foo` to the latest version, and it will also
   automatically edit `package.json` to use the latest version for `foo`.
@@ -255,6 +255,9 @@ You can then do one of the following:
 * Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
   all of your dependencies to the latest version, and also edits
   `package.json` to use the latest versions.
+
+* Manually edit `package.json` to use the most up-to-date versions, and then
+  run [`yarn`](https://yarnpkg.com/en/docs/cli/install).
 
 Locking down you dependencies
 =============================

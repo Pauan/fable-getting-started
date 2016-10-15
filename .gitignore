@@ -1,6 +1,7 @@
 /node_modules/
 /.build/
-/dist/
+/dist/es2015/
+/dist/umd/
 /fs/bin/
 /fs/obj/
 
