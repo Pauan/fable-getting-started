@@ -328,8 +328,9 @@ You should add the [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file
 into Git, because then everybody who downloads your project is guaranteed to
 use the exact same versions as you, which helps to prevent bugs.
 
-After making any changes (such as [`yarn add`](https://yarnpkg.com/en/docs/cli/add)
-or [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)) you should add
+After making any changes (such as [`yarn add`](https://yarnpkg.com/en/docs/cli/add),
+[`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
+[`yarn remove`](https://yarnpkg.com/en/docs/cli/remove)) you should add
 the new [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) into Git.
 
 By following those steps, your project will always use versions which are
