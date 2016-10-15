@@ -1,7 +1,7 @@
 Fable Quick Start
 =================
 
-It can be difficult to figure out how to properly setup Fable.
+It can be difficult to figure out how to properly setup [Fable](http://fable.io/).
 
 This repository contains fully working code, so it is easy to get started.
 
@@ -53,11 +53,12 @@ project.
 **Note:** you can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
 which is exactly the same as [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
 
-You do not need to install Fable globally: Fable will be installed locally
-inside of the `node_modules` folder. This makes it easier for other people to
-contribute to your project because they do not need to install Fable globally,
-and it also guarantees that everybody is compiling your project with the
-correct version of Fable.
+You do not need to install [Fable](http://fable.io/) globally:
+[Fable](http://fable.io/) will be installed locally inside of the
+`node_modules` folder. This makes it easier for other people to contribute to
+your project because they do not need to install [Fable](http://fable.io/)
+globally, and it also guarantees that everybody is compiling your project with
+the correct version of [Fable](http://fable.io/).
 
 Customization
 =============
@@ -83,12 +84,12 @@ Your project is automatically compiled when you use
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
 You can instead use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run),
-which will compile your project (exactly the same as
+which will compile your project (just like
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)), but it will also
 automatically recompile your project if you make any changes to the `.fs` or
 `.js` files.
 
-If you want to stop watch mode, just hit the `Enter` key.
+If you want to stop watch mode, just hit the `Enter` or `Return` key.
 
 Watch mode is very convenient, and it's also **much** faster, because it only
 recompiles the files that actually changed, rather than recompiling your
@@ -96,9 +97,10 @@ entire project from scratch.
 
 After making a minor change to a single `.fs` file,
 [`yarn`](https://yarnpkg.com/en/docs/cli/install) takes 4,000
-milliseconds, but [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run)
-takes only 40 milliseconds! The times may be slower or faster depending on
-your computer, but watch mode is always faster than a full compile.
+milliseconds to recompile the project, but
+[`yarn run watch`](https://yarnpkg.com/en/docs/cli/run) takes only 40
+milliseconds! The times may be slower or faster depending on your computer,
+but watch mode is always faster than a full compile.
 
 Running your project
 ====================
@@ -125,10 +127,10 @@ Making changes to the project
 You can modify the `.fs` files in the `fs` folder, and you can modify the
 `.js` files in the `js` folder.
 
-The `.fs` files are F# code, which will be compiled by Fable.
+The `.fs` files are F# code, which will be compiled by [Fable](http://fable.io/).
 
-The `.js` files are JavaScript code, which will be compiled by Babel and will
-be bundled into your compiled code.
+The `.js` files are JavaScript code, which will be compiled by
+[Babel](https://babeljs.io/) and will be bundled into your compiled code.
 
 If you want to add more `.fs` files, you will need to edit the
 `fs/Main.fsproj` file. As an example, if you want to add in a new `Foo.fs`
