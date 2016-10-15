@@ -2,6 +2,7 @@ import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import sourcemaps from "rollup-plugin-sourcemaps";
 import babel from "rollup-plugin-babel";
+import root from "rollup-plugin-root-import";
 
 export default {
   moduleName: "fableQuickStart",
@@ -14,6 +15,10 @@ export default {
   ],
 
   plugins: [
+    root({
+      root: __dirname
+    }),
+
     nodeResolve(),
 
     commonjs({

@@ -11,9 +11,7 @@ In addition, it also shows how to do the following:
 
 * Download JavaScript libraries and then import them into F#
 
-* Use your project as an application in either a browser or Node.js
-
-* Distribute your project as a library which can be used in other projects
+* Run your project as an application in either a browser or Node.js
 
 Downloading the project
 =======================
@@ -35,7 +33,7 @@ Make sure that you are in the `fable-getting-started` folder. All of the
 following commands assume that you are at the root of the project: they will
 not work if you are in a sub-folder!
 
-Make sure that you have [`node`](https://nodejs.org/en/) and
+Make sure that you have [`node`](https://nodejs.org/) and
 [`yarn`](https://yarnpkg.com/) installed.
 
 You can get [`yarn`](https://yarnpkg.com/) from either
@@ -47,8 +45,9 @@ npm install --global yarn
 ```
 
 Now you must use the [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
-command, which will download all of the necessary dependencies. After the
-dependencies are downloaded, it will then automatically compile your project.
+command, which will download all of the necessary dependencies for the
+project. After the dependencies are downloaded, it will then automatically
+compile your project.
 
 You can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install) which is
 exactly the same as [`yarn install`](https://yarnpkg.com/en/docs/cli/install)
@@ -82,14 +81,13 @@ has taken the name first.
 Compiling your project
 ======================
 
-Your project is automatically compiled when running
-[`yarn`](https://yarnpkg.com/en/docs/cli/install). It is also automatically
-compiled when publishing to npm.
+Your project is automatically compiled when you run
+[`yarn`](https://yarnpkg.com/en/docs/cli/install).
 
 Alternatively, you can use [`yarn run build`](https://yarnpkg.com/en/docs/cli/run)
 to manually compile your project. It is the same as using
 [`yarn`](https://yarnpkg.com/en/docs/cli/install), except that it does not
-download any libraries, so you must run
+download any dependencies, so you must run
 [`yarn`](https://yarnpkg.com/en/docs/cli/install) first before you can use
 [`yarn run build`](https://yarnpkg.com/en/docs/cli/run)
 
@@ -153,57 +151,6 @@ be on top of `Foo.fs`
 That also means that `Main.fs` must be at the bottom, because it depends on
 everything else and nothing depends on it.
 
-How to import JavaScript code into F#
-=====================================
-
-First, make sure that you have the following code in your `fs/Main.fsproj`
-file:
-
-```
-<Reference Include="../node_modules/fable-core/Fable.Core.dll" />
-```
-
-Don't worry: this repository already includes the above code in
-`fs/Main.fsproj`
-
-Now you can import `.js` files into `.fs` by using the following attribute:
-
-```
-[<Fable.Core.Import("foo", "../js/foo.js")>]
-```
-
-If you are using a lot of imports you can do this:
-
-```
-open Fable.Core
-```
-
-Now you no longer need the `Fable.Core` prefix when importing:
-
-```
-[<Import("foo", "../js/foo.js")>]
-```
-
-You can see an example in the `fs/Message.fs` file.
-
-This works for any local JavaScript files in the `js` folder, but it also
-works for builtin Node.js modules or JavaScript files which have been
-downloaded with [`yarn`](https://yarnpkg.com/en/docs/cli/install):
-
-```
-[<Import("join", "path")>]
-```
-
-```
-[<Import("foo", "other-library/foo.js")>]
-```
-
-If the file path starts with `.` or `..` then it is local to your project.
-
-If the file path does not start with `.` or `..` then it is an npm package.
-That means that it is either a builtin Node.js module (e.g. `path`, `fs`,
-etc.) or it is a library in the `node_modules` folder.
-
 How to download JavaScript libraries
 ====================================
 
@@ -242,11 +189,65 @@ If the git repository is hosted on GitHub, you can instead use a shorter form:
 yarn add --dev Pauan/fable-getting-started#354a0b13a0d4df61d0cc8615829b238fdd1fbd3e
 ```
 
+How to import JavaScript code into F#
+=====================================
+
+First, make sure that you have the following code in your `fs/Main.fsproj`
+file:
+
+```
+<Reference Include="../node_modules/fable-core/Fable.Core.dll" />
+```
+
+Don't worry: this repository already includes the above code in
+`fs/Main.fsproj`
+
+Now you can import `.js` files into `.fs` by using the following attribute:
+
+```
+[<Fable.Core.Import("foo", "/js/foo.js")>]
+```
+
+If you are using a lot of imports you can do this:
+
+```
+open Fable.Core
+```
+
+Now you no longer need the `Fable.Core` prefix when importing:
+
+```
+[<Import("foo", "/js/foo.js")>]
+```
+
+You can see an example in the `fs/Message.fs` file.
+
+This works for any local JavaScript files in the `js` folder, but it also
+works for builtin Node.js modules or JavaScript files which have been
+downloaded with [`yarn`](https://yarnpkg.com/en/docs/cli/install):
+
+```
+[<Import("join", "path")>]
+```
+
+```
+[<Import("foo", "other-library/foo.js")>]
+```
+
+If the file path starts with `/` then it is relative to your project
+directory.
+
+If the file path does not start with `/` then it is an npm package. That means
+that it is either a builtin Node.js module (e.g.
+[`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
+[`fs`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html), etc.) or it is
+a library in the `node_modules` folder.
+
 How to upgrade your dependencies
 ================================
 
 You can use [`yarn outdated`](https://yarnpkg.com/en/docs/cli/outdated) which
-will tell you which of your dependencies are out of date.
+will tell you which of your project's dependencies are out of date.
 
 You can then do either of the following:
 
@@ -266,8 +267,8 @@ Whenever you run [`yarn`](https://yarnpkg.com/en/docs/cli/install),
 [`yarn add`](https://yarnpkg.com/en/docs/cli/add), or
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), it will create a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file which specifies all
-of the libraries that your project depends on, and it also specifies the exact
-version for every library.
+of the dependencies that your project depends on, and it also specifies the
+exact version for every dependency.
 
 When using [`yarn`](https://yarnpkg.com/en/docs/cli/install), if a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock)
@@ -284,19 +285,3 @@ the new [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) into git.
 
 By following those steps, your project will always use versions which are
 guaranteed to work.
-
-Distributing your project as a library
-======================================
-
-You can push your project to a hosting site such as GitHub, or you can
-[publish it to npm](https://docs.npmjs.com/misc/developers) by using
-[`yarn publish`](https://yarnpkg.com/en/docs/cli/publish)
-
-If somebody else uses your project as a library, everything should work
-seamlessly.
-
-If it doesn't work, then they can do one of the following:
-
-* If they are using CommonJS/RequireJS/globals they can import `dist/umd/Main.js`
-
-* If they are using ES2015 modules, they can import `dist/es2015/Main.js`
