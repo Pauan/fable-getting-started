@@ -262,8 +262,8 @@ works for builtin [Node.js](https://nodejs.org/) modules or
 If the file path starts with `/` then it is relative to your project
 directory.
 
-If the file path starts with `.` or `..` then it is relative to the file which
-contains the `Import`
+If the file path starts with `.` or `..` then it is relative to the `.fs` file
+which contains the `Import`
 
 If the file path does not start with `/` or `.` or `..` then it is an
 [npm](https://www.npmjs.com/) package. That means that it is either a builtin
@@ -284,23 +284,37 @@ You can then do one of the following:
 * Use [`yarn upgrade foo`](https://yarnpkg.com/en/docs/cli/upgrade) which will
   upgrade the package `foo` to the latest version, and it will also
   automatically edit [`package.json`](https://yarnpkg.com/en/docs/package-json)
-  to use the latest version for `foo`.
+  to use the latest version for `foo`
 
 * Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
-  all of your dependencies to the latest version, and also edits
+  *all* of your dependencies to the latest version, and also edits
   [`package.json`](https://yarnpkg.com/en/docs/package-json) to use the latest
   versions.
 
 * Manually edit [`package.json`](https://yarnpkg.com/en/docs/package-json) to
-  use the most up-to-date versions, and then use
-  [`yarn`](https://yarnpkg.com/en/docs/cli/install).
+  use the latest versions, and then use
+  [`yarn`](https://yarnpkg.com/en/docs/cli/install)
+
+How to remove a dependency
+==========================
+
+You can do one of the following:
+
+* Use [`yarn remove foo`](https://yarnpkg.com/en/docs/cli/remove) which will
+  remove the package `foo`, and it will also automatically remove `foo` from
+  the [`package.json`](https://yarnpkg.com/en/docs/package-json) file.
+
+* Manually edit [`package.json`](https://yarnpkg.com/en/docs/package-json) to
+  remove the `foo` package`, and then use
+  [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
 Locking down you dependencies
 =============================
 
 Whenever you use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
-[`yarn add`](https://yarnpkg.com/en/docs/cli/add), or
-[`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), it will create a
+[`yarn add`](https://yarnpkg.com/en/docs/cli/add),
+[`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
+[`yarn remove`](https://yarnpkg.com/en/docs/cli/remove), it will create a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file which specifies all
 of the dependencies that your project depends on, and it also specifies the
 exact version for every dependency.
