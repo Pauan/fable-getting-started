@@ -62,15 +62,13 @@ correct version of Fable.
 Customization
 =============
 
-You will probably want to change the following properties:
+You will probably want to change these properties in the `package.json` file:
 
-* `package.json`
+* `name`
 
-  * `name`
+* `description`
 
-  * `description`
-
-  * `version`
+* `version`
 
 You can use whatever name you want for your project, as long as nobody else
 has taken the name first.
@@ -81,8 +79,8 @@ Compiling your project
 Your project is automatically compiled when you use
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
-If you use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run) then it
-will compile your project (exactly the same as
+You can instead use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run),
+which will compile your project (exactly the same as
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)), but it will also
 automatically recompile your project if you make any changes to the `.fs` or
 `.js` files.
@@ -90,14 +88,14 @@ automatically recompile your project if you make any changes to the `.fs` or
 If you want to stop watch mode, just hit the `Enter` key.
 
 Watch mode is very convenient, and it's also **much** faster, because it only
-recompiles the files that actually changed, rather than compiling your
+recompiles the files that actually changed, rather than recompiling your
 entire project from scratch.
 
 After making a minor change to a single `.fs` file,
 [`yarn`](https://yarnpkg.com/en/docs/cli/install) takes 4,000
 milliseconds, but [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run)
 takes only 40 milliseconds! The times may be slower or faster depending on
-your computer, but watch mode is always faster than a full build.
+your computer, but watch mode is always faster than a full compile.
 
 Running your project
 ====================
@@ -162,25 +160,42 @@ to use in your project, then you can do either of the following:
 Usually the first option is better, but the second option gives you more
 precise control.
 
+----
+
 If a JavaScript library isn't on [npm](https://www.npmjs.com/), you can
 instead use a Git URL:
 
 ```
-yarn add --dev git+https://foo/bar.git#commit
+yarn add --dev https://foo/bar.git
 ```
 
-You will need to replace `foo/bar.git` with the URL to the Git repository, and
-you should also specify a `commit`, which should be a Git commit hash. Here is
-an example:
+You will need to replace `https://foo/bar.git` with the URL to the Git
+repository. Here is an example:
 
 ```
-yarn add --dev git+https://github.com/Pauan/fable-getting-started.git#354a0b13a0d4df61d0cc8615829b238fdd1fbd3e
+yarn add --dev https://github.com/fable-compiler/fable-react.git
 ```
 
-If the Git repository is hosted on GitHub, you can instead use the shorter form `author/name`, like this:
+If the Git repository is hosted on GitHub, you can instead use the shorter
+form `author/name`, like this:
 
 ```
-yarn add --dev Pauan/fable-getting-started#354a0b13a0d4df61d0cc8615829b238fdd1fbd3e
+yarn add --dev fable-compiler/fable-react
+```
+
+When using a Git URL, you can also specify a particular commit hash or branch
+by adding a `#` at the end, like this:
+
+```
+yarn add --dev https://github.com/fable-compiler/fable-react.git#3df6ff3422dae06f206e7307a3b3eb8fbf5b610c
+yarn add --dev https://github.com/fable-compiler/fable-react.git#master
+```
+
+This also works with the shorter GitHub form:
+
+```
+yarn add --dev fable-compiler/fable-react#3df6ff3422dae06f206e7307a3b3eb8fbf5b610c
+yarn add --dev fable-compiler/fable-react#master
 ```
 
 How to import JavaScript code into F#
