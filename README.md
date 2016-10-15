@@ -316,12 +316,12 @@ Whenever you use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
 [`yarn remove`](https://yarnpkg.com/en/docs/cli/remove), it will create a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file which specifies all
-of the dependencies that your project depends on, and it also specifies the
-exact version for every dependency.
+of the dependencies that your project depends on (including sub-dependencies),
+and it also specifies the exact version for every dependency.
 
 When using [`yarn`](https://yarnpkg.com/en/docs/cli/install), if a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock)
-file exists, then it will use the versions which are specified in the
+file exists, then it will use the exact versions which are specified in the
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file.
 
 You should add the [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file
