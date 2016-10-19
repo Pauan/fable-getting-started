@@ -1,7 +1,7 @@
 {
   "babelrc": true,
   "sourceMaps": true,
-  "projFile": "./fsx/Main.fsx",
+  "projFile": "./fs/Main.fsproj",
   "outDir": "./.build",
   "coreLib": "fable-core/es2015.js",
   "targets": {
