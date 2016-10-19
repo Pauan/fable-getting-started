@@ -9,9 +9,13 @@ In addition, it also shows how to do the following:
 
 * Import local JavaScript code into F#
 
-* Download JavaScript libraries and then import them into F#
+* Use Fable libraries in your project
+
+* Use JavaScript libraries in your project
 
 * Run your project as an application in either a browser or [Node.js](https://nodejs.org/)
+
+* Distribute your project as a library which can be used by other Fable or JavaScript projects.
 
 Downloading the project
 =======================
