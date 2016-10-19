@@ -1,5 +1,9 @@
 module Main
 
+#r "../node_modules/fable-core/Fable.Core.dll"
+
+#load "Message.fsx"
+
 open Fable.Import
 open Message
 
