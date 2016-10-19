@@ -681,8 +681,8 @@ command-line-args@^3.0.0, command-line-args@^3.0.1:
     typical "^2.5.0"
 
 command-line-usage@^3.0.1, command-line-usage@^3.0.3:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/command-line-usage/-/command-line-usage-3.0.4.tgz#bf20f34f08d5f4d63487a32e07d193d8c47b4a03"
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/command-line-usage/-/command-line-usage-3.0.5.tgz#654bf110cab0d8127c4f7e4863a1e8facb75379f"
   dependencies:
     ansi-escape-sequences "^3.0.0"
     array-back "^1.0.3"
@@ -815,8 +815,8 @@ fable-compiler@^0.6.15:
     semver "^5.3.0"
 
 fable-core@^0.6.9:
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.6.9.tgz#bbdbfe25a7b07a6c1e6b6e3f0ab2bdcc457550f6"
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.6.10.tgz#67b09a47864a0fd69d3653b4e4486289de173b6d"
 
 feature-detect-es6@^1.3.0, feature-detect-es6@^1.3.1:
   version "1.3.1"
@@ -1607,8 +1607,8 @@ source-map-resolve@^0.5.0:
     urix "^0.1.0"
 
 source-map-support@^0.4.0, source-map-support@^0.4.2:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.3.tgz#693c8383d4389a4569486987c219744dfc601685"
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.5.tgz#4438df4219e1b3c7feb674614b4c67f9722db1e4"
   dependencies:
     source-map "^0.5.3"
 
