@@ -7,3 +7,5 @@ let message: string = jsNative
 
 [<Import("EOL", "os")>]
 let eol: string = jsNative
+
+let message2 = message + Foo.foo
