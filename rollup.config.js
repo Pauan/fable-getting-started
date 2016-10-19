@@ -28,7 +28,7 @@ export default {
     sourcemaps(),
 
     babel({
-      include: ["./js/**", "./.build/**"]
+      include: ["./src/js/**", "./.build/**"]
     })
   ]
 };

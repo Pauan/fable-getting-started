@@ -2,7 +2,7 @@
 /.build/
 /dist/es2015/
 /dist/umd/
-/fs/bin/
-/fs/obj/
+/src/fs/bin/
+/src/fs/obj/
 
 /npm-debug.log

@@ -106,8 +106,8 @@ milliseconds to recompile the project, but
 milliseconds! The times may be slower or faster depending on your computer,
 but watch mode is always faster than a full compile.
 
-Running your project
-====================
+Running your project as an application
+======================================
 
 After compiling, the final JavaScript code will be in the `dist/umd/Main.js`
 file.
@@ -228,7 +228,7 @@ Now you can import `.js` files into `.fs` files by using the
 `Fable.Core.Import` attribute:
 
 ```
-[<Fable.Core.Import("foo", "/js/foo.js")>]
+[<Fable.Core.Import("foo", "../js/foo.js")>]
 let foo: string = jsNative
 ```
 
@@ -244,7 +244,7 @@ open Fable.Core
 Now you no longer need the `Fable.Core` prefix when importing:
 
 ```
-[<Import("foo", "/js/foo.js")>]
+[<Import("foo", "../js/foo.js")>]
 let foo: string = jsNative
 ```
 
@@ -263,13 +263,10 @@ works for builtin [Node.js](https://nodejs.org/) modules or
 [<Import("foo", "some-library/foo.js")>]
 ```
 
-If the file path starts with `/` then it is relative to your project
-directory.
-
 If the file path starts with `.` or `..` then it is relative to the `.fs` file
 which contains the `Import`
 
-If the file path does not start with `/` or `.` or `..` then it is an
+If the file path does not start with `.` or `..` then it is an
 [npm](https://www.npmjs.com/) package. That means that it is either a builtin
 [Node.js](https://nodejs.org/) module (e.g.
 [`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
