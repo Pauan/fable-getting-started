@@ -1,5 +1,5 @@
 /node_modules/
-/.build/
+/dist/fable/
 /dist/es2015/
 /dist/umd/
 /src/fs/bin/

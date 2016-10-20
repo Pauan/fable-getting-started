@@ -2,11 +2,10 @@ import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import sourcemaps from "rollup-plugin-sourcemaps";
 import babel from "rollup-plugin-babel";
-import root from "rollup-plugin-root-import";
 
 export default {
   moduleName: "Main",
-  entry: "./.build/Main.js",
+  entry: "./dist/fable/Main.js",
   sourceMap: true,
 
   targets: [
@@ -15,10 +14,6 @@ export default {
   ],
 
   plugins: [
-    root({
-      root: __dirname
-    }),
-
     nodeResolve(),
 
     commonjs({
@@ -28,7 +23,7 @@ export default {
     sourcemaps(),
 
     babel({
-      include: ["./src/js/**", "./.build/**"]
+      include: ["./src/js/**", "./dist/fable/**"]
     })
   ]
 };

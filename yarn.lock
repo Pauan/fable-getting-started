@@ -798,9 +798,9 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
-fable-compiler@^0.6.15:
-  version "0.6.15"
-  resolved "https://registry.yarnpkg.com/fable-compiler/-/fable-compiler-0.6.15.tgz#e598672fc8d5c6864d7544014cd57a38f6988620"
+fable-compiler@^0.7.5-alpha:
+  version "0.7.5-alpha.11"
+  resolved "https://registry.yarnpkg.com/fable-compiler/-/fable-compiler-0.7.5-alpha.11.tgz#ff513f713c1299f74f91173c83ff998671fd0add"
   dependencies:
     babel-core "^6.13.2"
     babel-dts-generator "^0.6.2"
@@ -812,11 +812,15 @@ fable-compiler@^0.6.15:
     command-line-args "^3.0.1"
     command-line-usage "^3.0.3"
     json5 "^0.5.0"
+    rollup "^0.36.3"
+    rollup-plugin-commonjs "^5.0.5"
+    rollup-plugin-hypothetical "^1.2.1"
+    rollup-plugin-node-resolve "^2.0.0"
     semver "^5.3.0"
 
-fable-core@^0.6.9:
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.6.10.tgz#67b09a47864a0fd69d3653b4e4486289de173b6d"
+fable-core@^0.7.5-alpha:
+  version "0.7.5-alpha.5"
+  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.7.5-alpha.5.tgz#9d04b4fe660b6b105c4e7796dc43b10fda32fb8c"
 
 feature-detect-es6@^1.3.0, feature-detect-es6@^1.3.1:
   version "1.3.1"
@@ -1529,6 +1533,10 @@ rollup-plugin-commonjs@^5.0.5:
     resolve "^1.1.7"
     rollup-pluginutils "^1.5.1"
 
+rollup-plugin-hypothetical@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-hypothetical/-/rollup-plugin-hypothetical-1.2.1.tgz#f427077b7bab592cc298197ab9aaac4fe4efa055"
+
 rollup-plugin-node-resolve@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.0.0.tgz#07e0ae94ac002a3ea36e8f33ca121d9f836b1309"
@@ -1536,10 +1544,6 @@ rollup-plugin-node-resolve@^2.0.0:
     browser-resolve "^1.11.0"
     builtin-modules "^1.1.0"
     resolve "^1.1.6"
-
-rollup-plugin-root-import@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-root-import/-/rollup-plugin-root-import-0.2.0.tgz#4a5209531fdaf146ce16dd7cbacc174f51e16e44"
 
 rollup-plugin-sourcemaps@^0.4.1:
   version "0.4.1"
