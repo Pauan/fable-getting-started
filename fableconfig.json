@@ -1,22 +1,15 @@
 {
-  "babelrc": true,
-  "sourceMaps": true,
   "projFile": "./src/fs/Main.fsproj",
+  "bundle": "./rollup.config.js",
   "outDir": "./dist/fable",
+  "sourceMaps": true,
   "dll": true,
-  "coreLib": "fable-core/es2015.js",
+  "coreLib": "fable-core/es2015",
   "targets": {
-    "production": {
-      "scripts": {
-        "postbuild": "rollup --config"
-      }
-    },
+    "production": {},
     "debug": {
       "watch": true,
-      "symbols": ["DEBUG"],
-      "scripts": {
-        "postbuild-once": "rollup --config --watch"
-      }
+      "symbols": ["DEBUG"]
     }
   }
 }

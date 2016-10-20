@@ -23,6 +23,7 @@ type MyObservable<'T>() =
                 member x.Dispose() = listeners.Remove(w) |> ignore }
 
 let main () =
+    Browser.console.log message
     let source = MyObservable()
     Observable.add (fun x -> Browser.console.log x) source
     source.Trigger 5

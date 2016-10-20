@@ -3,7 +3,6 @@
   "description": "Fully working Fable project which makes it easy to get started",
   "version": "1.0.0",
   "main": "./dist/umd/Main.js",
-  "module": "./dist/es2015/Main.js",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-plugin-external-helpers": "^6.8.0",
@@ -14,10 +13,7 @@
     "fable-core": "^0.7.5-alpha",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
-    "rollup-plugin-commonjs": "^5.0.5",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-sourcemaps": "^0.4.1",
-    "rollup-watch": "^2.5.0"
+    "rollup-plugin-sourcemaps": "^0.4.1"
   },
   "scripts": {
     "prepublish": "yarn run build",

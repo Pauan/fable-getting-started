@@ -1,6 +1,5 @@
 /node_modules/
 /dist/fable/
-/dist/es2015/
 /dist/umd/
 /src/fs/bin/
 /src/fs/obj/
