@@ -4,6 +4,7 @@
   <PropertyGroup>
     <Name>Main</Name>
     <OutputPath>../../dist/fable</OutputPath>
+    <IntermediateOutputPath>../../dist/fable</IntermediateOutputPath>
     <DocumentationFile>../../dist/fable/Main.xml</DocumentationFile>
   </PropertyGroup>
 
