@@ -1,7 +1,8 @@
-/node_modules/
 /dist/fable/
 /dist/umd/
+/node_modules/
 /src/fs/bin/
 /src/fs/obj/
 
 /npm-debug.log
+/yarn-error.log

@@ -1,12 +1,22 @@
 {
   "projFile": "./src/fs/Main.fsproj",
-  "bundle": "./rollup.config.js",
   "outDir": "./dist/fable",
   "sourceMaps": true,
+  "module": "es2015",
   "dll": true,
   "coreLib": "fable-core/es2015",
+  "rollup": {
+    "dest": "./dist/umd/Main.js",
+    "format": "umd",
+    "plugins": [
+      ["sourcemaps"],
+
+      ["babel", {
+        "include": ["./src/js/**"]
+      }]
+    ]
+  },
   "targets": {
-    "production": {},
     "debug": {
       "watch": true,
       "symbols": ["DEBUG"]
