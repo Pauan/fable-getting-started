@@ -1,5 +1,5 @@
 {
-  "projFile": "./src/fs/Main.fsproj",
+  "projFile": "./Main.fsproj",
   "outDir": "./dist/fable",
   "sourceMaps": true,
   "module": "es2015",
