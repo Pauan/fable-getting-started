@@ -4,16 +4,8 @@
   "version": "1.0.0",
   "main": "./dist/umd/Main.js",
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-plugin-external-helpers": "^6.8.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-runtime": "^6.11.6",
     "fable-compiler": "^0.7.5-alpha",
-    "fable-core": "^0.7.5-alpha",
-    "rollup": "^0.36.3",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-plugin-sourcemaps": "^0.4.1"
+    "fable-core": "^0.7.5-alpha"
   },
   "scripts": {
     "prepublish": "npm run build",

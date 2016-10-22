@@ -10,27 +10,13 @@
     "es2015": {
       "rollup": {
         "dest": "./dist/es2015/Main.js",
-        "format": "es",
-        "plugins": [
-          ["sourcemaps"],
-
-          ["babel", {
-            "include": ["./src/js/**"]
-          }]
-        ]
+        "format": "es"
       }
     },
     "umd": {
       "rollup": {
         "dest": "./dist/umd/Main.js",
-        "format": "umd",
-        "plugins": [
-          ["sourcemaps"],
-
-          ["babel", {
-            "include": ["./src/js/**"]
-          }]
-        ]
+        "format": "umd"
       }
     }
   }
