@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--
    !  Every project must have a different GUID.
-   !  You can create a GUID by using this site: https://guidgenerator.com/
+   !  You can create a new GUID by using this site: https://guidgenerator.com/
    !  The GUID must be upper-case, and it must be wrapped in {}
    !-->
   <PropertyGroup>

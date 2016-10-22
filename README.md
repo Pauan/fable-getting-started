@@ -7,6 +7,8 @@ This repository contains fully working code, so it is easy to get started.
 
 In addition, it also shows how to do the following:
 
+* Write unit tests for your F# code
+
 * Import local JavaScript code into F#
 
 * Use Fable libraries in your project
@@ -14,8 +16,6 @@ In addition, it also shows how to do the following:
 * Use JavaScript libraries in your project
 
 * Run your project as an application in either a browser or [Node.js](https://nodejs.org/)
-
-* Distribute your project as a library which can be used by other Fable or JavaScript projects.
 
 Downloading the project
 =======================
@@ -33,7 +33,7 @@ That command will download this repository and place it into the
 Installing the project
 ======================
 
-Make sure that you are in the `fable-getting-started` folder. All of the
+Make sure that you are in the `fable-getting-started` folder. *All* of the
 following commands assume that you are at the root of the project: they will
 not work if you are in a sub-folder!
 
@@ -48,10 +48,15 @@ use the following command:
 npm install --global yarn
 ```
 
+**Note:** Fable works with either `npm` or `yarn`. This repository uses `yarn`
+because it has several advantages over `npm`
+
+----
+
 Now you must use [`yarn install`](https://yarnpkg.com/en/docs/cli/install),
 which will download all of the necessary dependencies for the project.
 
-After the dependencies are downloaded, it will then automatically compile your
+After the dependencies are downloaded, it will then automatically compile the
 project.
 
 **Note:** you can instead use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
@@ -64,22 +69,38 @@ your project because they do not need to install [Fable](http://fable.io/)
 globally, and it also guarantees that everybody is compiling your project with
 the correct version of [Fable](http://fable.io/).
 
-Customization
-=============
+----
 
-You will probably want to change these properties in the
+Now that the project is successfully downloaded and installed, you need to
+customize it so that it becomes **your** project.
+
+You will need to change the `ProjectGuid` in the `Main.fsproj` and
+`test/Test.fsproj` files.
+
+You cannot use the existing GUIDs. You can create a new GUID by using
+[this site](https://guidgenerator.com/).
+
+Every `.fsproj` file must have a different GUID. The GUID must be upper-case,
+and it must be wrapped in `{}`
+
+You will also need to change these properties in the
 [`package.json`](https://yarnpkg.com/en/docs/package-json) file:
 
-* `name`
+* [`name`](https://yarnpkg.com/en/docs/package-json#toc-name)
 
-* `description`
+* [`description`](https://yarnpkg.com/en/docs/package-json#toc-description)
 
-* `version`
+* [`version`](https://yarnpkg.com/en/docs/package-json#toc-version)
 
-* `license`
+* [`repository`](https://yarnpkg.com/en/docs/package-json#toc-repository)
 
 You can use whatever name you want for your project, as long as nobody else
 has taken the name first.
+
+It is strongly recommended to add the following properties to the
+[`package.json`](https://yarnpkg.com/en/docs/package-json) file:
+
+* [`license`](https://yarnpkg.com/en/docs/package-json#toc-license)
 
 Compiling your project
 ======================
@@ -90,8 +111,8 @@ Your project is automatically compiled when you use
 You can instead use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run),
 which will compile your project (just like
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)), but it will also
-automatically recompile your project if you make any changes to the `.fs` or
-`.js` files.
+automatically recompile your project if you make any changes to the `.fs`
+files.
 
 If you want to stop watch mode, just hit the `Enter` or `Return` key.
 
@@ -105,6 +126,22 @@ milliseconds to recompile the project, but
 [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run) takes only 40
 milliseconds! The times may be slower or faster depending on your computer,
 but watch mode is always faster than a full compile.
+
+Running your project's unit tests
+=================================
+
+You can use [`yarn test`](https://yarnpkg.com/en/docs/cli/test) which will
+compile your project and then run all of your project's unit tests.
+
+Alternatively, you can use [`yarn test -- --watch`](https://yarnpkg.com/en/docs/cli/test)
+which is the same as [`yarn test`](https://yarnpkg.com/en/docs/cli/test) except
+that it automatically reruns the unit tests whenever you make any changes to a
+`test/fs` file. This is much faster than using
+[`yarn test`](https://yarnpkg.com/en/docs/cli/test)
+
+You should frequently use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)
+before running your unit tests, to ensure that your code works with the latest
+versions of your project's dependencies.
 
 Running your project as an application
 ======================================
@@ -125,23 +162,25 @@ file.
 * If you want to run it in [Node.js](https://nodejs.org/), you can use
   `node .` or `node dist/umd/Main.js` (they both do the same thing)
 
-Making changes to the project
-=============================
+Making changes to your project
+==============================
 
-You can modify the `.fs` files in the `fs` folder, and you can modify the
-`.js` files in the `js` folder.
+You can modify the `.fs` files in the `src/fs` folder, and you can modify the
+`.js` files in the `src/js` folder.
 
 The `.fs` files are F# code, which will be compiled by [Fable](http://fable.io/).
 
-The `.js` files are JavaScript code, which will be compiled by
-[Babel](https://babeljs.io/) and will be bundled into your compiled code.
+The `.js` files are JavaScript code, which can be imported into F#.
+
+**Note:** The `.js` files are **not** compiled with [Babel](http://babeljs.io/).
+The `.js` files should be written using ES6 modules, but with ES5 syntax.
 
 If you want to add more `.fs` files, you will need to edit the
-`fs/Main.fsproj` file. As an example, if you want to add in a new `Foo.fs`
-file, you will need to add the following code to `fs/Main.fsproj`:
+`Main.fsproj` file. As an example, if you want to add in a new `src/fs/Foo.fs`
+file, you will need to add the following code to `Main.fsproj`:
 
 ```
-<Compile Include="Foo.fs" />
+<Compile Include="./src/fs/Foo.fs" />
 ```
 
 This should be placed in the same `ItemGroup` as the other `.fs` files. Also,
@@ -150,6 +189,48 @@ be on top of `Foo.fs`
 
 That also means that `Main.fs` must be at the bottom, because it depends on
 everything else.
+
+Writing unit tests for your project
+===================================
+
+Unit tests are placed in the `test/fs` folder. They follow this format:
+
+```
+namespace Test
+
+open Fable.Core.Testing
+
+[<TestFixture>]
+module Message =
+    [<Test>]
+    let ``message is correct``() =
+        equal "Hello world!" Message.message
+```
+
+* The file must be in the `Test` namespace.
+
+* The file must use `open Fable.Core.Testing`
+
+* The file must create one or more inner modules which uses `[<TestFixture>]`
+
+* Each unit test must use the `[<Test>]` attribute.
+
+* The name of the unit test is the same as the name of the `[<Test>]` function.
+  In the above example, the unit test is called `message is correct`
+
+* You can use the `equal` function to write assertions. The first argument is
+  the expected value, the second argument is the actual value.
+
+* The unit tests can automatically use any variable which is defined in
+  `src/fs`. The above example uses the `Message.message` variable which is
+  defined in `src/fs/Message.fs`
+
+* The unit test module does **not** need to have the same name as the module
+  in `src/fs`, but it is more convenient if they are the same.
+
+If you want to add more unit tests, you will need to edit the
+`test/Test.fsproj` file. It follows the same rules as `Main.fsproj` (see
+"Making changes to your project")
 
 How to download JavaScript libraries
 ====================================
@@ -200,77 +281,84 @@ When using a Git URL, you can also specify a particular commit hash or branch
 by adding a `#` at the end, like this:
 
 ```
-yarn add --dev https://github.com/fable-compiler/fable-react.git#3df6ff3422dae06f206e7307a3b3eb8fbf5b610c
+yarn add --dev https://github.com/fable-compiler/fable-react.git#b9869cd67adfc2e80f659adb9fa80260c335ace9
 yarn add --dev https://github.com/fable-compiler/fable-react.git#master
 ```
 
 This also works with the shorter GitHub form:
 
 ```
-yarn add --dev fable-compiler/fable-react#3df6ff3422dae06f206e7307a3b3eb8fbf5b610c
+yarn add --dev fable-compiler/fable-react#b9869cd67adfc2e80f659adb9fa80260c335ace9
 yarn add --dev fable-compiler/fable-react#master
 ```
 
 How to import JavaScript code into F#
 =====================================
 
-First, make sure that you have the following code in your `fs/Main.fsproj`
+First, make sure that you have the following code in your `Main.fsproj`
 file:
 
 ```
-<Reference Include="../node_modules/fable-core/Fable.Core.dll" />
+<Reference Include="./node_modules/fable-core/Fable.Core.dll" />
 ```
 
 Don't worry: this repository already includes the above code in
-`fs/Main.fsproj`
+`Main.fsproj`
 
-Now you can import `.js` files into `.fs` files by using the
-`Fable.Core.Import` attribute:
+Now you can import `.js` code into F# by using
+`Fable.Core.JsInterop.importMember`:
 
 ```
-[<Fable.Core.Import("foo", "../js/foo.js")>]
-let foo: string = jsNative
+let foo = Fable.Core.JsInterop.importMember<string> "../js/foo.js"
 ```
 
-**Note:** You have to specify the type of the variable, and its value should
-usually be `jsNative`
+**Note:** The variable must be the same in F# and JavaScript (in the above
+example, the variable must be `foo` in both F# and JavaScript)
+
+**Note:** If the JavaScript code uses `export default` then you might need to
+use `importDefault` rather than `importMember`
+
+**Note:** You have to specify the F# type of the variable. If you don't want
+to specify a type, you can instead use `obj`, which means "any type":
+
+```
+let foo = Fable.Core.JsInterop.importMember<obj> "../js/foo.js"
+```
 
 If you are using a lot of imports you can do this:
 
 ```
-open Fable.Core
+open Fable.Core.JsInterop
 ```
 
-Now you no longer need the `Fable.Core` prefix when importing:
+Now you no longer need the `Fable.Core.JsInterop` prefix when importing:
 
 ```
-[<Import("foo", "../js/foo.js")>]
-let foo: string = jsNative
+let foo = importMember<string> "../js/foo.js"
 ```
 
-You can see an example in the `fs/Message.fs` file.
+You can see an example in the `src/fs/Message.fs` file.
 
-This works for any local JavaScript files in the `js` folder, but it also
+This works for any local JavaScript files in the `src/js` folder, but it also
 works for builtin [Node.js](https://nodejs.org/) modules or
 [npm](https://www.npmjs.com/) packages which have been downloaded with
 [`yarn`](https://yarnpkg.com/en/docs/cli/install):
 
 ```
-[<Import("join", "path")>]
+let EOL = importMember<string> "os"
 ```
 
 ```
-[<Import("foo", "some-library/foo.js")>]
+let foo = importMember<string> "some-library/foo.js"
 ```
 
 If the file path starts with `.` or `..` then it is relative to the `.fs` file
-which contains the `Import`
+which contains the `importMember`
 
-If the file path does not start with `.` or `..` then it is an
-[npm](https://www.npmjs.com/) package. That means that it is either a builtin
+If the file path does not start with `.` or `..` then it is either a builtin
 [Node.js](https://nodejs.org/) module (e.g.
 [`path`](https://nodejs.org/dist/latest-v6.x/docs/api/path.html),
-[`fs`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html), etc.) or it is
+[`os`](https://nodejs.org/dist/latest-v6.x/docs/api/os.html), etc.) or it is
 a dependency which is listed in the
 [`package.json`](https://yarnpkg.com/en/docs/package-json) file.
 
@@ -326,13 +414,13 @@ file exists, then it will use the exact versions which are specified in the
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file.
 
 You should add the [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file
-into Git, because then everybody who downloads your project is guaranteed to
-use the exact same versions as you, which helps to prevent bugs.
+into Git, because then everybody who contributes to your project is guaranteed
+to use the exact same versions as you, which helps to prevent bugs.
+
+You should very frequently use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)
+to ensure that your dependencies are up to date.
 
 After making any changes (such as [`yarn add`](https://yarnpkg.com/en/docs/cli/add),
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
 [`yarn remove`](https://yarnpkg.com/en/docs/cli/remove)) you should add
 the new [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) into Git.
-
-By following those steps, your project will always use versions which are
-guaranteed to work.

@@ -2,6 +2,7 @@
   "name": "fable-quick-start",
   "description": "Fully working Fable project which makes it easy to get started",
   "version": "1.0.0",
+  "repository": "github:Pauan/fable-getting-started",
   "main": "./dist/umd/Main.js",
   "module": "./dist/es2015/Main.js",
   "jsnext:main": "./dist/es2015/Main.js",
