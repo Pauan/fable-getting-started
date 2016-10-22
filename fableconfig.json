@@ -6,8 +6,6 @@
   "dll": true,
   "coreLib": "fable-core/es2015",
   "rollup": {
-    "dest": "./dist/umd/Main.js",
-    "format": "umd",
     "plugins": [
       ["sourcemaps"],
 
@@ -17,9 +15,18 @@
     ]
   },
   "targets": {
-    "debug": {
-      "watch": true,
-      "symbols": ["DEBUG"]
+    "fable": {},
+    "es2015": {
+      "rollup": {
+        "dest": "./dist/es2015/Main.js",
+        "format": "es"
+      }
+    },
+    "umd": {
+      "rollup": {
+        "dest": "./dist/umd/Main.js",
+        "format": "umd"
+      }
     }
   }
 }
