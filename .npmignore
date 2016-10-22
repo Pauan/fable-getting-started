@@ -1,0 +1,10 @@
+/dist/test/
+/src/fs/
+/test/
+
+/.gitignore
+/.npmignore
+/fableconfig.json
+/Main.fsproj
+/yarn-error.log
+/yarn.lock

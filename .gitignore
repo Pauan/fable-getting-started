@@ -1,9 +1,8 @@
 /dist/es2015/
 /dist/fable/
+/dist/test/
 /dist/umd/
 /node_modules/
-/src/fs/bin/
-/src/fs/obj/
 
 /npm-debug.log
 /yarn-error.log

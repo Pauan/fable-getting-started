@@ -3,13 +3,20 @@
   "description": "Fully working Fable project which makes it easy to get started",
   "version": "1.0.0",
   "main": "./dist/umd/Main.js",
+  "module": "./dist/es2015/Main.js",
+  "jsnext:main": "./dist/es2015/Main.js",
   "devDependencies": {
     "fable-compiler": "^0.7.5-alpha",
-    "fable-core": "^0.7.5-alpha"
+    "fable-core": "^0.7.5-alpha",
+    "fable-plugins-nunit": "^0.6.0",
+    "mocha": "^3.1.2"
   },
   "scripts": {
     "prepublish": "npm run build",
+
     "build": "fable --target fable && fable --target umd && fable --target es2015",
-    "watch": "fable --target umd --watch"
+    "watch": "fable --target umd --watch",
+
+    "test": "fable --target test"
   }
 }

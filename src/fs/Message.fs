@@ -1,9 +1,7 @@
 module Message
 
-open Fable.Core
+open Fable.Core.JsInterop
 
-[<Import("message", "../js/Message.js")>]
-let message: string = jsNative
+let message = importMember<string> "../js/Message.js"
 
-[<Import("EOL", "os")>]
-let eol: string = jsNative
+let EOL = importMember<string> "os"
