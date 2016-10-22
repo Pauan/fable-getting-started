@@ -5,27 +5,32 @@
   "module": "es2015",
   "dll": true,
   "coreLib": "fable-core/es2015",
-  "rollup": {
-    "plugins": [
-      ["sourcemaps"],
-
-      ["babel", {
-        "include": ["./src/js/**"]
-      }]
-    ]
-  },
   "targets": {
     "fable": {},
     "es2015": {
       "rollup": {
         "dest": "./dist/es2015/Main.js",
-        "format": "es"
+        "format": "es",
+        "plugins": [
+          ["sourcemaps"],
+
+          ["babel", {
+            "include": ["./src/js/**"]
+          }]
+        ]
       }
     },
     "umd": {
       "rollup": {
         "dest": "./dist/umd/Main.js",
-        "format": "umd"
+        "format": "umd",
+        "plugins": [
+          ["sourcemaps"],
+
+          ["babel", {
+            "include": ["./src/js/**"]
+          }]
+        ]
       }
     }
   }
