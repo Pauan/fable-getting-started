@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- PROJECT NAME AND OUTPUT PATH -->
+  <!--
+   !  Every project must have a different GUID.
+   !  You can create a GUID by using this site: https://guidgenerator.com/
+   !  The GUID must be upper-case, and it must be wrapped in {}
+   !-->
+  <PropertyGroup>
+    <ProjectGuid>{4057826A-1B4A-4553-832E-9570A3394346}</ProjectGuid>
+  </PropertyGroup>
+
+  <!--
+   !  These are Fable libraries that you are using in your project.
+   !  They must start with ./ so Fable knows that they're relative paths.
+   !-->
+  <ItemGroup>
+    <Reference Include="./node_modules/fable-core/Fable.Core.dll" />
+  </ItemGroup>
+
+  <!--
+   !  These are the F# files that are a part of your project.
+   !  File order is important in F#. Files cannot depend on anything below them.
+   !-->
+  <ItemGroup>
+    <Compile Include="./src/fs/Message.fs" />
+    <Compile Include="./src/fs/Main.fs" />
+  </ItemGroup>
+
+  <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
   <PropertyGroup>
     <Name>Main</Name>
     <OutputPath>./dist/fable</OutputPath>
     <IntermediateOutputPath>./dist/fable</IntermediateOutputPath>
     <DocumentationFile>./dist/fable/Main.xml</DocumentationFile>
   </PropertyGroup>
-
-  <!-- DLL REFERENCES -->
-  <!-- Start them always with a period so Fable knows they're relative paths. -->
-  <ItemGroup>
-    <Reference Include="./node_modules/fable-core/Fable.Core.dll" />
-  </ItemGroup>
-
-  <!-- PROJECT FILES -->
-  <!-- File order is important in F#. Files cannot depend on anything below them. -->
-  <ItemGroup>
-    <Compile Include="src/fs/Message.fs" />
-    <Compile Include="src/fs/Main.fs" />
-  </ItemGroup>
-
-  <!-- DO NOT EDIT BELOW THIS POINT -->
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <SchemaVersion>2.0</SchemaVersion>
