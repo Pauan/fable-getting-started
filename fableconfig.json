@@ -13,10 +13,11 @@
         "./Main.fsproj",
         "./test/Test.fsproj",
       ],
+      "module": "commonjs",
       "outDir": "./dist/test",
       "plugins": ["./node_modules/fable-plugins-nunit/Fable.Plugins.NUnit.dll"],
       "scripts": {
-        "postbuild": "mocha --colors ./dist/test/test/fs"
+        "postbuild": "node node_modules/mocha/bin/mocha --colors ./dist/test/test/fs"
       }
     }
   }

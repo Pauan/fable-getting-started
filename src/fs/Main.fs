@@ -1,4 +1,4 @@
-module Main
+module MyProject.Main
 
 open Fable.Import
 open Message

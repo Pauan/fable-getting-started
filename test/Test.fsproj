@@ -1,50 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!--
-   !  Every project must have a different GUID.
-   !  You can create a new GUID by using this site: https://guidgenerator.com/
-   !  The GUID must be upper-case, and it must be wrapped in {}
-   !-->
-  <PropertyGroup>
-    <ProjectGuid>{1F14CA2F-3588-4507-8202-E51EDEB733EC}</ProjectGuid>
-  </PropertyGroup>
-
-  <!--
-   !  These are Fable libraries that you are using in your project.
-   !  They must start with ./ so Fable knows that they're relative paths.
-   !-->
-  <ItemGroup>
-    <Reference Include="../node_modules/fable-core/Fable.Core.dll" />
-    <!--<ProjectReference Include="../Main.fsproj" />-->
-  </ItemGroup>
-
-  <!--
-   !  These are the F# files that are a part of your project.
-   !  File order is important in F#. Files cannot depend on anything below them.
-   !-->
-  <ItemGroup>
-    <Compile Include="./Util.fs" />
-    <Compile Include="./fs/Message.fs" />
-  </ItemGroup>
-
-  <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
   <PropertyGroup>
     <Name>Test</Name>
-    <OutputPath>../dist/test</OutputPath>
-    <IntermediateOutputPath>../dist/test</IntermediateOutputPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
     <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1f14ca2f-3588-4507-8202-e51edeb733ec</ProjectGuid>
+    <OutputType>Library</OutputType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>None</DebugType>
-    <Optimize>false</Optimize>
-    <Tailcalls>false</Tailcalls>
-    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="../node_modules/fable-core/Fable.Core.dll" />
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -52,6 +17,16 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Main.fsproj">
+      <Name>Main.fsproj</Name>
+      <Project>{4057826a-1b4a-4553-832e-9570a3394346}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="./Util.fs" />
+    <Compile Include="./fs/Message.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Choose>

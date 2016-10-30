@@ -1,1 +1,1 @@
-export var message = "Hello world!";
+exports.message = "Hello world!";
