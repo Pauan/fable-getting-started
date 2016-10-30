@@ -15,7 +15,7 @@
    !-->
   <ItemGroup>
     <Reference Include="../node_modules/fable-core/Fable.Core.dll" />
-    <Reference Include="../dist/fable/Main.dll" />
+    <!--<ProjectReference Include="../Main.fsproj" />-->
   </ItemGroup>
 
   <!--
