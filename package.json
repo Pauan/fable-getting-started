@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "build": "fable --target umd && fable --target es2015",
+    "build": "fable --target umd",
     "watch": "fable --target umd --watch",
     "test": "fable --target test"
   }
