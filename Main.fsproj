@@ -23,6 +23,7 @@
    !-->
   <ItemGroup>
     <Compile Include="./src/fs/Message.fs" />
+    <Compile Include="./src/fs/Message2.fs" />
     <Compile Include="./src/fs/Main.fs" />
   </ItemGroup>
 
