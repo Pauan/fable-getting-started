@@ -23,8 +23,8 @@
    !  File order is important in F#. Files cannot depend on anything below them.
    !-->
   <ItemGroup>
-    <Compile Include="./Util.fs" />
-    <Compile Include="./fs/Message.fs" />
+    <Compile Include="Util.fs" />
+    <Compile Include="fs/Message.fs" />
   </ItemGroup>
 
   <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
