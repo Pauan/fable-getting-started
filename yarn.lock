@@ -776,8 +776,8 @@ extsprintf@1.0.2:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
 fable-compiler@^0.7.5-alpha:
-  version "0.7.5-alpha.21"
-  resolved "https://registry.yarnpkg.com/fable-compiler/-/fable-compiler-0.7.5-alpha.21.tgz#e4158104fd757bc9bf3ea1e100ddb7d266c58654"
+  version "0.7.5-alpha.22"
+  resolved "https://registry.yarnpkg.com/fable-compiler/-/fable-compiler-0.7.5-alpha.22.tgz#dc5740813647e9ed55776a1621384a0bbdc93874"
   dependencies:
     babel-core "^6.13.2"
     babel-dts-generator "^0.6.2"
@@ -797,12 +797,12 @@ fable-compiler@^0.7.5-alpha:
     semver "^5.3.0"
 
 fable-core@^0.7.5-alpha:
-  version "0.7.5-alpha.10"
-  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.7.5-alpha.10.tgz#d55c351ac270fccde59dfa5757d1fd276cfac71d"
+  version "0.7.5-alpha.11"
+  resolved "https://registry.yarnpkg.com/fable-core/-/fable-core-0.7.5-alpha.11.tgz#ec0cc5100f3a84dbea00c3441ccd5479efd5a9ed"
 
-fable-plugins-nunit@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/fable-plugins-nunit/-/fable-plugins-nunit-0.6.0.tgz#b89057aec18a50f9982005ae1c0422e32328ffc7"
+fable-plugins-nunit@^0.7.0-alpha:
+  version "0.7.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/fable-plugins-nunit/-/fable-plugins-nunit-0.7.0-alpha.2.tgz#1ce57268f981559828b13093a2ef2ff0c3cdd2d5"
 
 feature-detect-es6@^1.3.1:
   version "1.3.1"
@@ -1620,8 +1620,8 @@ sntp@1.x.x:
     hoek "2.x.x"
 
 source-map-support@^0.4.0, source-map-support@^0.4.2:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.5.tgz#4438df4219e1b3c7feb674614b4c67f9722db1e4"
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.6.tgz#32552aa64b458392a85eab3b0b5ee61527167aeb"
   dependencies:
     source-map "^0.5.3"
 

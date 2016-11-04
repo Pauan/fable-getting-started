@@ -23,17 +23,16 @@
    !-->
   <ItemGroup>
     <Compile Include="src/fs/Message.fs" />
-    <Compile Include="src/fs/Message2.fs" />
     <Compile Include="src/fs/Main.fs" />
   </ItemGroup>
 
   <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
-  <PropertyGroup>
-    <Name>Main</Name>
+  <!--<PropertyGroup>
+    <Name>App.Main</Name>
     <OutputPath>./dist/fable</OutputPath>
     <IntermediateOutputPath>./dist/fable</IntermediateOutputPath>
     <DocumentationFile>./dist/fable/Main.xml</DocumentationFile>
-  </PropertyGroup>
+  </PropertyGroup>-->
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <SchemaVersion>2.0</SchemaVersion>

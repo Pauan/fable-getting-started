@@ -1,4 +1,4 @@
-namespace Test
+module Test.Message
 
 open Fable.Core.Testing
 
@@ -6,4 +6,4 @@ open Fable.Core.Testing
 module Message =
     [<Test>]
     let ``message is correct``() =
-        equal "Hello world!" Message.message
+        equal "Hello world!" App.Message.message

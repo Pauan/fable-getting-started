@@ -24,16 +24,16 @@ Make sure you have Git installed, and then use the following command in a
 terminal:
 
 ```
-git clone https://github.com/Pauan/fable-getting-started.git
+git clone https://github.com/Pauan/fable-getting-started.git fable-foo
 ```
 
 That command will download this repository and place it into the
-`fable-getting-started` folder.
+`fable-foo` folder. You can use a different folder name if you want.
 
 Installing the project
 ======================
 
-Make sure that you are in the `fable-getting-started` folder. *All* of the
+Make sure that you are in the `fable-foo` folder. *All* of the
 following commands assume that you are at the root of the project: they will
 not work if you are in a sub-folder!
 
@@ -72,38 +72,42 @@ the correct version of [Fable](http://fable.io/).
 ----
 
 Now that the project is successfully downloaded and installed, you need to
-customize it so that it becomes **your** project.
+customize it so that it becomes **your** project:
 
-You will need to change the `ProjectGuid` in the `Main.fsproj` and
-`test/Test.fsproj` files.
+* You will need to change the `ProjectGuid` in the `Main.fsproj` and
+  `test/Test.fsproj` files.
 
-You cannot use the existing GUIDs. You can create a new GUID by using
-[this site](https://guidgenerator.com/).
+  You cannot use the existing GUIDs. You can create a new GUID by using
+  [this site](https://guidgenerator.com/).
 
-Every `.fsproj` file must have a different GUID. The GUID must be upper-case,
-and it must be wrapped in `{}`
+  Every `.fsproj` file must have a different GUID. The GUID must be upper-case,
+  and it must be wrapped in `{}`
 
-You will also need to change these properties in the
-[`package.json`](https://yarnpkg.com/en/docs/package-json) file:
+* You will need to change these properties in the
+  [`package.json`](https://yarnpkg.com/en/docs/package-json) file:
 
-* [`name`](https://yarnpkg.com/en/docs/package-json#toc-name)
+  * [`name`](https://yarnpkg.com/en/docs/package-json#toc-name)
 
-* [`description`](https://yarnpkg.com/en/docs/package-json#toc-description)
+  * [`description`](https://yarnpkg.com/en/docs/package-json#toc-description)
 
-* [`version`](https://yarnpkg.com/en/docs/package-json#toc-version)
+  * [`version`](https://yarnpkg.com/en/docs/package-json#toc-version)
 
-* [`repository`](https://yarnpkg.com/en/docs/package-json#toc-repository)
+  * [`repository`](https://yarnpkg.com/en/docs/package-json#toc-repository)
 
-You can use whatever name you want for your project, as long as nobody else
-has taken the name first.
+  You can use whatever name you want for your project, as long as nobody else
+  has taken the name first.
 
-It is strongly recommended to add the following properties to the
-[`package.json`](https://yarnpkg.com/en/docs/package-json) file:
+  It is strongly recommended to add the following properties to the
+  [`package.json`](https://yarnpkg.com/en/docs/package-json) file:
 
-* [`license`](https://yarnpkg.com/en/docs/package-json#toc-license)
+  * [`license`](https://yarnpkg.com/en/docs/package-json#toc-license)
 
-Compiling your project
-======================
+* You will need to change `README.md`
+
+Now your project is ready for use!
+
+How to compile your project
+===========================
 
 Your project is automatically compiled when you use
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)
@@ -127,8 +131,8 @@ milliseconds to recompile the project, but
 milliseconds! The times may be slower or faster depending on your computer,
 but watch mode is always faster than a full compile.
 
-Running your project's unit tests
-=================================
+How to run your project's unit tests
+====================================
 
 You can use [`yarn test`](https://yarnpkg.com/en/docs/cli/test) which will
 compile your project and then run all of your project's unit tests.
@@ -143,8 +147,8 @@ You should frequently use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgra
 before running your unit tests, to ensure that your code works with the latest
 versions of your project's dependencies.
 
-Running your project as an application
-======================================
+How to run your project as an application
+=========================================
 
 After compiling, the final JavaScript code will be in the `dist/umd/Main.js`
 file.
@@ -162,8 +166,8 @@ file.
 * If you want to run it in [Node.js](https://nodejs.org/), you can use
   `node .` or `node dist/umd/Main.js` (they both do the same thing)
 
-Making changes to your project
-==============================
+How to make changes to your project
+===================================
 
 You can modify the `.fs` files in the `src/fs` folder, and you can modify the
 `.js` files in the `src/js` folder.
@@ -190,8 +194,8 @@ be on top of `Foo.fs`
 That also means that `Main.fs` must be at the bottom, because it depends on
 everything else.
 
-Writing unit tests for your project
-===================================
+How to write unit tests for your project
+========================================
 
 Unit tests are placed in the `test/fs` folder. They follow this format:
 
@@ -230,7 +234,7 @@ module Message =
 
 If you want to add more unit tests, you will need to edit the
 `test/Test.fsproj` file. It follows the same rules as `Main.fsproj` (see
-"Making changes to your project")
+"How to make changes to your project")
 
 How to download JavaScript libraries
 ====================================
@@ -325,6 +329,8 @@ to specify a type, you can instead use `obj`, which means "any type":
 let foo = Fable.Core.JsInterop.importMember<obj> "../js/foo.js"
 ```
 
+----
+
 If you are using a lot of imports you can do this:
 
 ```
@@ -338,6 +344,8 @@ let foo = importMember<string> "../js/foo.js"
 ```
 
 You can see an example in the `src/fs/Message.fs` file.
+
+----
 
 This works for any local JavaScript files in the `src/js` folder, but it also
 works for builtin [Node.js](https://nodejs.org/) modules or

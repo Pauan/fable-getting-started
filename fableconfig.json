@@ -11,12 +11,15 @@
     "test": {
       "projFile": [
         "./Main.fsproj",
-        "./test/Test.fsproj",
+        "./test/Main.fsproj",
       ],
-      "outDir": "./dist/test",
+      "rollup": {
+        "dest": "./dist/test/Test.js",
+        "format": "umd"
+      },
       "plugins": ["./node_modules/fable-plugins-nunit/Fable.Plugins.NUnit.dll"],
       "scripts": {
-        "postbuild": "mocha --colors ./dist/test/test/fs"
+        "postbuild": "mocha --colors ./dist/test/Test.js"
       }
     }
   }

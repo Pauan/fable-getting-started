@@ -1,4 +1,4 @@
-module Message
+module App.Message
 
 open Fable.Core.JsInterop
 

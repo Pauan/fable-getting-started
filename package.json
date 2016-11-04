@@ -7,7 +7,7 @@
   "devDependencies": {
     "fable-compiler": "^0.7.5-alpha",
     "fable-core": "^0.7.5-alpha",
-    "fable-plugins-nunit": "^0.6.0",
+    "fable-plugins-nunit": "^0.7.0-alpha",
     "mocha": "^3.1.2"
   },
   "scripts": {

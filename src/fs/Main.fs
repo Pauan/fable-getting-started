@@ -1,10 +1,10 @@
-module Main
+module App.Main
 
 open Fable.Import
-open Message
+open App.Message
 
 let main () =
-    Browser.console.log (message + Test.Message.message)
+    Browser.console.log message
 
 do
     main ()
