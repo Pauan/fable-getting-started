@@ -3,7 +3,7 @@ namespace Test
 open Fable.Core.Testing
 
 [<TestFixture>]
-module Message =
+module Foo =
     [<Test>]
     let ``message is correct``() =
         equal "Hello world!" App.Message.message

@@ -11,7 +11,7 @@
     "test": {
       "projFile": [
         "./Main.fsproj",
-        "./test/Main.fsproj",
+        "./test/Main.fsproj"
       ],
       "rollup": {
         "dest": "./dist/test/Test.js",

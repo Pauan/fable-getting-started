@@ -24,7 +24,9 @@
    !-->
   <ItemGroup>
     <Compile Include="Util.fs" />
+    <Compile Include="fs/Foo.fs" />
     <Compile Include="fs/Message.fs" />
+    <Compile Include="Main.fs" />
   </ItemGroup>
 
   <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
@@ -34,7 +36,7 @@
     <IntermediateOutputPath>../dist/test</IntermediateOutputPath>
   </PropertyGroup>-->
   <PropertyGroup>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <SchemaVersion>2.0</SchemaVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
