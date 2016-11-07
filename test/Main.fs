@@ -1,4 +1,5 @@
 module Test.Main
 
-open Test.Foo
-open Test.Message
+do
+    Test.Foo.foo ()
+    Test.Message.foo ()

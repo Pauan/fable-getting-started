@@ -5,5 +5,5 @@ open Fable.Core.Testing
 [<TestFixture>]
 module Foo =
     [<Test>]
-    let ``message is correct``() =
+    let foo () =
         equal "Hello world!" App.Message.message
