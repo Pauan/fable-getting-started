@@ -15,6 +15,7 @@
       ],
       "outDir": "./dist/test",
       "module": "commonjs",
+      "coreLib": "fable-core/umd",
       "plugins": ["./node_modules/fable-plugins-nunit/Fable.Plugins.NUnit.dll"],
       "scripts": {
         "postbuild": "mocha --reporter min --colors --sort --recursive ./dist/test/test/fs"

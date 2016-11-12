@@ -24,7 +24,6 @@
    !-->
   <ItemGroup>
     <Compile Include="Util.fs" />
-    <Compile Include="fs/Foo.fs" />
     <Compile Include="fs/Message.fs" />
   </ItemGroup>
 
