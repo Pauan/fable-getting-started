@@ -13,13 +13,11 @@
         "./Main.fsproj",
         "./test/Main.fsproj"
       ],
-      "rollup": {
-        "dest": "./dist/test/Test.js",
-        "format": "umd"
-      },
+      "outDir": "./dist/test",
+      "module": "commonjs",
       "plugins": ["./node_modules/fable-plugins-nunit/Fable.Plugins.NUnit.dll"],
       "scripts": {
-        "postbuild": "mocha --colors ./dist/test/Test.js"
+        "postbuild": "mocha --reporter min --colors --sort --recursive ./dist/test/test/fs"
       }
     }
   }
