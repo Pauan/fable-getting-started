@@ -179,16 +179,19 @@ You can use any [ECMAScript 2015 features](https://github.com/lukehoban/es6featu
 which are [supported by Babel](http://babeljs.io/docs/learn-es2015/).
 
 If you want to add more `.fs` files, you will need to edit the
-`Main.fsproj` file. As an example, if you want to add in a new `src/fs/Foo.fs`
-file, you will need to add the following code to `Main.fsproj`:
+`Main.fsproj` file.
+
+As an example, if you want to add in a new `src/fs/Foo.fs` file, you will need
+to add the following code to `Main.fsproj`:
 
 ```
 <Compile Include="src/fs/Foo.fs" />
 ```
 
-This should be placed in the same `ItemGroup` as the other `.fs` files. Also,
-the order matters! If a file `Foo.fs` uses a file `Bar.fs`, then `Bar.fs` must
-be on top of `Foo.fs`
+This should be placed in the same `ItemGroup` as the other `.fs` files.
+
+Also, the order matters! If a file `Foo.fs` uses a file `Bar.fs`, then `Bar.fs`
+must be on top of `Foo.fs`
 
 That also means that `Main.fs` must be at the bottom, because it depends on
 everything else.
@@ -219,6 +222,7 @@ module Message =
 * Each unit test must use the `[<Test>]` attribute.
 
 * The name of the unit test is the same as the name of the `[<Test>]` function.
+
   In the above example, the unit test is called `message should be correct`
 
 * You can use the `equal` function to write assertions. The first argument is
@@ -320,7 +324,7 @@ to add the following code to `Main.fsproj`:
 
 This should be placed in the same `ItemGroup` as the other `.dll` files.
 
-Now you can use the library in your `.fs` files.
+Now you can use the `fable-powerpack` library in your `.fs` files.
 
 How to import JavaScript code into F#
 =====================================
@@ -374,7 +378,7 @@ You can see an example in the `src/fs/Message.fs` file.
 ----
 
 By convention, JavaScript files are placed into `src/js`, but you can import
-JavaScript files from any folder.
+JavaScript files in any folder.
 
 You can also import builtin [Node.js](https://nodejs.org/) modules or
 [npm](https://www.npmjs.com/) packages which have been downloaded with
@@ -433,16 +437,17 @@ You can do one of the following:
   remove the `foo` package, and then use
   [`yarn`](https://yarnpkg.com/en/docs/cli/install)
 
-Locking down you dependencies
-=============================
+Locking down your dependencies
+==============================
 
 Whenever you use [`yarn`](https://yarnpkg.com/en/docs/cli/install),
 [`yarn add`](https://yarnpkg.com/en/docs/cli/add),
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
 [`yarn remove`](https://yarnpkg.com/en/docs/cli/remove), it will create a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file which specifies all
-of the dependencies that your project depends on (including sub-dependencies),
-and it also specifies the exact version for every dependency.
+of the dependencies that your project depends on (including sub-dependencies,
+sub-sub-dependencies, etc.), and it also specifies the exact version for every
+dependency.
 
 When using [`yarn`](https://yarnpkg.com/en/docs/cli/install), if a
 [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock)
@@ -453,8 +458,9 @@ You should add the [`yarn.lock`](https://yarnpkg.com/en/docs/yarn-lock) file
 into Git, because then everybody who contributes to your project is guaranteed
 to use the exact same versions as you, which helps to prevent bugs.
 
-You should very frequently use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)
-to ensure that your dependencies are up to date.
+You should very frequently use [`yarn outdated`](https://yarnpkg.com/en/docs/cli/outdated)
+and [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) to ensure that
+your dependencies are up to date.
 
 After making any changes (such as [`yarn add`](https://yarnpkg.com/en/docs/cli/add),
 [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade), or
