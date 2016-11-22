@@ -15,6 +15,7 @@
    !-->
   <ItemGroup>
     <Reference Include="./node_modules/fable-core/Fable.Core.dll" />
+    <Reference Include="./node_modules/fable-powerpack/Fable.PowerPack.dll" />
   </ItemGroup>
 
   <!--
@@ -27,12 +28,6 @@
   </ItemGroup>
 
   <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
-  <!--<PropertyGroup>
-    <Name>App.Main</Name>
-    <OutputPath>./dist/fable</OutputPath>
-    <IntermediateOutputPath>./dist/fable</IntermediateOutputPath>
-    <DocumentationFile>./dist/fable/Main.xml</DocumentationFile>
-  </PropertyGroup>-->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <SchemaVersion>2.0</SchemaVersion>

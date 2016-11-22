@@ -28,11 +28,6 @@
   </ItemGroup>
 
   <!-- DO NOT EDIT BELOW THIS POINT UNLESS YOU KNOW WHAT YOU'RE DOING -->
-  <!--<PropertyGroup>
-    <Name>Test</Name>
-    <OutputPath>../dist/test</OutputPath>
-    <IntermediateOutputPath>../dist/test</IntermediateOutputPath>
-  </PropertyGroup>-->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <SchemaVersion>2.0</SchemaVersion>

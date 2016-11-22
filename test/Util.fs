@@ -6,5 +6,4 @@ module Util =
 
     // Convenience method
     let equal (expected: 'T) (actual: 'T) =
-        // TODO is this correct ?
         Assert.AreEqual(true, (expected = actual))

@@ -49,7 +49,7 @@ npm install --global yarn
 ```
 
 **Note:** Fable works with either `npm` or `yarn`. This repository uses `yarn`
-because it has several advantages over `npm`
+because it has [several advantages over `npm`](https://yarnpkg.com/)
 
 ----
 
@@ -104,7 +104,7 @@ customize it so that it becomes **your** project:
 
 * You will need to change `README.md`
 
-Now your project is ready for use!
+Now your project is ready!
 
 How to compile your project
 ===========================
@@ -115,7 +115,7 @@ Your project is automatically compiled when you use
 You can instead use [`yarn run watch`](https://yarnpkg.com/en/docs/cli/run),
 which will compile your project (just like
 [`yarn`](https://yarnpkg.com/en/docs/cli/install)), but it will also
-automatically recompile your project if you make any changes to the `.fs`
+automatically recompile your project if you make any changes to your project's
 files.
 
 If you want to stop watch mode, just hit the `Enter` or `Return` key.
@@ -139,8 +139,8 @@ compile your project and then run all of your project's unit tests.
 
 Alternatively, you can use [`yarn test -- --watch`](https://yarnpkg.com/en/docs/cli/test)
 which is the same as [`yarn test`](https://yarnpkg.com/en/docs/cli/test) except
-that it automatically reruns the unit tests whenever you make any changes to a
-`test/fs` file. This is much faster than using
+that it automatically reruns the unit tests whenever you make any changes to your
+project's files. This is much faster than using
 [`yarn test`](https://yarnpkg.com/en/docs/cli/test)
 
 You should frequently use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade)
@@ -174,17 +174,16 @@ You can modify the `.fs` files in the `src/fs` folder, and you can modify the
 
 The `.fs` files are F# code, which will be compiled by [Fable](http://fable.io/).
 
-The `.js` files are JavaScript code, which can be imported into F#.
-
-**Note:** The `.js` files are **not** compiled with [Babel](http://babeljs.io/).
-The `.js` files should be written using ES6 modules, but with ES5 syntax.
+The `.js` files are JavaScript code, which will be compiled by [Babel](http://babeljs.io/).
+You can use any [ECMAScript 2015 features](https://github.com/lukehoban/es6features#readme)
+which are [supported by Babel](http://babeljs.io/docs/learn-es2015/).
 
 If you want to add more `.fs` files, you will need to edit the
 `Main.fsproj` file. As an example, if you want to add in a new `src/fs/Foo.fs`
 file, you will need to add the following code to `Main.fsproj`:
 
 ```
-<Compile Include="./src/fs/Foo.fs" />
+<Compile Include="src/fs/Foo.fs" />
 ```
 
 This should be placed in the same `ItemGroup` as the other `.fs` files. Also,
@@ -207,8 +206,8 @@ open Fable.Core.Testing
 [<TestFixture>]
 module Message =
     [<Test>]
-    let ``message is correct``() =
-        equal "Hello world!" Message.message
+    let ``message should be correct`` () =
+        App.Message.message |> equal "Hello world!"
 ```
 
 * The file must be in the `Test` namespace.
@@ -220,13 +219,16 @@ module Message =
 * Each unit test must use the `[<Test>]` attribute.
 
 * The name of the unit test is the same as the name of the `[<Test>]` function.
-  In the above example, the unit test is called `message is correct`
+  In the above example, the unit test is called `message should be correct`
 
 * You can use the `equal` function to write assertions. The first argument is
   the expected value, the second argument is the actual value.
 
+  In the above example, `"Hello world!"` is the expected value, and
+  `App.Message.message` is the actual value.
+
 * The unit tests can automatically use any variable which is defined in
-  `src/fs`. The above example uses the `Message.message` variable which is
+  `src/fs`. The above example uses the `App.Message.message` variable which is
   defined in `src/fs/Message.fs`
 
 * The unit test module does **not** need to have the same name as the module
@@ -236,10 +238,10 @@ If you want to add more unit tests, you will need to edit the
 `test/Test.fsproj` file. It follows the same rules as `Main.fsproj` (see
 "How to make changes to your project")
 
-How to download JavaScript libraries
-====================================
+How to download Fable libraries
+===============================
 
-Most JavaScript libraries are stored in [npm](https://www.npmjs.com/). If
+Most Fable libraries are stored in [npm](https://www.npmjs.com/). If
 there is an [npm](https://www.npmjs.com/) package called `foo` that you want
 to use in your project, then you can do either of the following:
 
@@ -256,11 +258,11 @@ to use in your project, then you can do either of the following:
   [`devDependencies`](https://yarnpkg.com/en/docs/package-json#toc-devdependencies)
 
 Usually the first option is better, but the second option gives you more
-precise control.
+precise control over the version of the package.
 
 ----
 
-If a JavaScript library isn't on [npm](https://www.npmjs.com/), you can
+If a Fable library isn't on [npm](https://www.npmjs.com/), you can
 instead use a Git URL:
 
 ```
@@ -271,30 +273,54 @@ You will need to replace `https://foo/bar.git` with the URL to the Git
 repository. Here is an example:
 
 ```
-yarn add --dev https://github.com/fable-compiler/fable-react.git
+yarn add --dev https://github.com/fable-compiler/fable-powerpack.git
 ```
 
 If the Git repository is hosted on GitHub, you can instead use the shorter
 form `author/name`, like this:
 
 ```
-yarn add --dev fable-compiler/fable-react
+yarn add --dev fable-compiler/fable-powerpack
 ```
 
 When using a Git URL, you can also specify a particular commit hash or branch
 by adding a `#` at the end, like this:
 
 ```
-yarn add --dev https://github.com/fable-compiler/fable-react.git#b9869cd67adfc2e80f659adb9fa80260c335ace9
-yarn add --dev https://github.com/fable-compiler/fable-react.git#master
+yarn add --dev https://github.com/fable-compiler/fable-powerpack.git#5f1da75baf6c8f2fe0c13fe0e4b531ffaa1078ed
+yarn add --dev https://github.com/fable-compiler/fable-powerpack.git#master
 ```
 
 This also works with the shorter GitHub form:
 
 ```
-yarn add --dev fable-compiler/fable-react#b9869cd67adfc2e80f659adb9fa80260c335ace9
-yarn add --dev fable-compiler/fable-react#master
+yarn add --dev fable-compiler/fable-powerpack#5f1da75baf6c8f2fe0c13fe0e4b531ffaa1078ed
+yarn add --dev fable-compiler/fable-powerpack#master
 ```
+
+If you don't specify a commit hash or branch, then it uses the `master` branch.
+
+How to download JavaScript libraries
+====================================
+
+The directions are exactly the same as "How to download Fable libraries"
+
+How to use Fable libraries
+==========================
+
+Most Fable libraries contain a `.dll` file. You will need to edit your
+`Main.fsproj` file to include the library's `.dll` file.
+
+As an example, if you want to use the `fable-powerpack` library, you will need
+to add the following code to `Main.fsproj`:
+
+```
+<Reference Include="./node_modules/fable-powerpack/Fable.PowerPack.dll" />
+```
+
+This should be placed in the same `ItemGroup` as the other `.dll` files.
+
+Now you can use the library in your `.fs` files.
 
 How to import JavaScript code into F#
 =====================================
@@ -317,7 +343,7 @@ let foo = Fable.Core.JsInterop.importMember<string> "../js/foo.js"
 ```
 
 **Note:** The variable must be the same in F# and JavaScript (in the above
-example, the variable must be `foo` in both F# and JavaScript)
+example, the variable must be called `foo` in both F# and JavaScript)
 
 **Note:** If the JavaScript code uses `export default` then you might need to
 use `importDefault` rather than `importMember`
@@ -347,8 +373,10 @@ You can see an example in the `src/fs/Message.fs` file.
 
 ----
 
-This works for any local JavaScript files in the `src/js` folder, but it also
-works for builtin [Node.js](https://nodejs.org/) modules or
+By convention, JavaScript files are placed into `src/js`, but you can import
+JavaScript files from any folder.
+
+You can also import builtin [Node.js](https://nodejs.org/) modules or
 [npm](https://www.npmjs.com/) packages which have been downloaded with
 [`yarn`](https://yarnpkg.com/en/docs/cli/install):
 
@@ -383,8 +411,8 @@ You can then do one of the following:
   automatically edit [`package.json`](https://yarnpkg.com/en/docs/package-json)
   to use the latest version for `foo`
 
-* Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which upgrades
-  *all* of your dependencies to the latest versions, and also edits
+* Use [`yarn upgrade`](https://yarnpkg.com/en/docs/cli/upgrade) which will
+  upgrade *all* of your dependencies to the latest versions, and also edits
   [`package.json`](https://yarnpkg.com/en/docs/package-json) to use the latest
   versions.
 
