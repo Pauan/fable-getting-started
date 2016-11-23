@@ -24,7 +24,7 @@ Make sure you have Git installed, and then use the following command in a
 terminal:
 
 ```
-git clone https://github.com/Pauan/fable-getting-started.git fable-foo
+git clone https://github.com/fable-compiler/fable-getting-started.git fable-foo
 ```
 
 That command will download this repository and place it into the
